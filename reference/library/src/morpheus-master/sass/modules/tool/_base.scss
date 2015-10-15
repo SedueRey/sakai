@@ -1,14 +1,21 @@
+.#{$namespace}container{
+	background: $tool-background-color;
+	//@include box-shadow( 0 0 5px rgba(214,214,214,0.75) );
+}
 .#{$namespace}toolTitleNav{
-	background: $primary-color;
 	margin: 1em 0 0 0;
-	padding: 0.5em;
+	padding: 0.5em 0;
+	border-bottom: 1px solid $secondary-color;
 	position: relative;
+	@include box-shadow( 0 -2px 4px rgba(214,214,214,0.75) );
+
 	.#{$namespace}toolTitleNav__title{
-		color: lighten( $text-color, 70% );
+		color: $secondary-color;
 		display: inline-block;
-		font-size: 1.5em;
+		font-size: 1.1em;
 		width: calc(100% - 90px);
 		margin: 0px;
+		padding: 0 0.5em;
 		& ~ .#{$namespace}directUrl__dropDown{
 			display: none;
 			&.active{
@@ -28,18 +35,25 @@
 			}
 		}
 		a{
-			color: lighten( $text-color, 70% );
+			border-bottom: 1px solid rgba($secondary-color, 0.5);
+			color:  $secondary-color;
 			margin-right: 0.25em;
-
+			text-decoration: none;
+			.#{$namespace}toolTitleNav__link{
+				float: left;
+				position: relative;
+				top: 4px;
+			}
 		}
 	}
 
 	.#{$namespace}toolTitleNav__link{
-		color: lighten( $text-color, 70% );
-		margin-right: 0.25em;
-		padding: 5px 0 0 0;
-		text-decoration :none;
 		vertical-align: 0%;
+		color: $secondary-color;
+		text-decoration :none;
+		margin-right: 0.25em;
+		position: absolute;
+		top: 11px;
 		@include icon();
 		&--directurl{
 			@extend .fa;
@@ -74,10 +88,10 @@
 }
 
 .#{$namespace}toolBody{
-	background: $tool-background-color;
+	@include box-shadow( 0 0 5px rgba(214,214,214,0.75) );
 	iframe{
-		margin: 1em 0 0 0;
-		width: 99%;
+		margin: 0 0 0 0;
+		width: 100%;
 	}
 }
 

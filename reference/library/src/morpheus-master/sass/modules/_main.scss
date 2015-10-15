@@ -1,19 +1,20 @@
 //.#{$namespace}
-.is-logged-out{
+/*.is-logged-out{
 	#content, .#{$namespace}container--footer{
-		margin: 0 0 0 #{$tool-menu-width};
 		@media #{$phone}{
 			margin: 6em 0 0 0;
 		}
 	}
-}
+}*/
 
 .#{$namespace}portalWrapper {
 	position: relative;
 }
 
 #content, .#{$namespace}container--footer{
-	margin: 0 0 0 #{$tool-menu-width};
+	background: $background-color;
+	margin: $header-size 0 0 #{ $tool-menu-width + 6.85em };
+	padding: 1em 0 0 0;
 
 	@media #{$phone}{
 		margin: calc(#{$header-size} - 1em) 0 0 0;
@@ -35,12 +36,12 @@
 	margin: 0 1em 1em 1em;
 	clear: both;
 	@media #{$phone}{
-		margin: 0 0 0 0;
+		margin: 3em 0 0 0;
 	}
 }
 
 .#{$namespace}footer{
-	color: $background-color-secondary;
+	color: $text-color;
 	padding: 0.8em;
 	font-size: 0.8em;
 	#footer-links{

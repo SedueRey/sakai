@@ -1,6 +1,6 @@
 //.#{$namespace}
 body.is-logged-out{
-	#toolMenuWrap{
+	/*#toolMenuWrap{
 		top: 0;
 		@media #{$phone}{
 			top: $header-size;
@@ -8,20 +8,26 @@ body.is-logged-out{
 	}
 	.#{$namespace}mainHeader.is-maximized ~ #container #toolMenuWrap{
 		top: $header-size;
-	}
+	}*/
 }
-#toolMenuWrap{
+
+/*#toolMenuWrap{
 	background: $toolMenuColor;
 	display: block;
-	position: absolute;
-	top: $header-size;
-	width: $tool-menu-width;
-	margin: 4em 0 0 0;
-	transition-duration:0s;
+	position: fixed;
+	top: #{$header-size + 3px };
+	left: $tool-menu-width;
+	width: 6.85em;
+	margin: 0 0 0 0;
+	height: calc(100% - #{$header-size});
+	overflow: auto;
 	
 	@media #{$phone}{
 		left: -#{$icon-size * 2};
+		top: 0px;
+		height: 100%;
 		width: #{$icon-size * 2};
+		@include transition(left 0.25s linear);
 		@if $skin-with-icons {
 			.#{$namespace}toolsNav__menuitem--title{
 				display: none;
@@ -42,24 +48,61 @@ body.is-logged-out{
 	&.openedLinkNav{
 		margin: 0 0 0 0;
 	}
-}
+}*/
 
 .#{$namespace}toolsNav__title--current-site{
-	display: none;
+	color: $tool-background-color;
+	position: fixed;
+	top: 12px;
+	left: 180px;
+	display: block;
+	font-size: 1.2em;
+	font-weight: 300;
+	margin: 0 auto;
+	max-width:calc(100% - 6em);
+	z-index: 999;
 	@media #{$phone}{
 		color: $tool-background-color;
+		background: darken( $primary-color, 10% );
 		display: block;
-		font-size: 1.2em;
-		margin: 0 auto;
-		max-width:calc(100% - 6em);
-		text-align:center;
+		font-size: 1.1em;
+		width: 100%;
+		max-width: 100%;
+		text-align: left;
+		padding: 12px 16px;
+		position: fixed;
+		top: 3em;
+		left: 0;
+		z-index: 99;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		@include box-shadow( inset 0 0 8px rgba( $background-color ,0.15) );
+		@include transition( top 0.25s linear );
+		&.moving{
+			top: -3.3em;
+		}
 	}
 }
 
 #roleSwitch{
-	background-color: $background-color;
-	color: $background-color-secondary;
-	padding: 1em 0 0 0;
+	background-color: $toolMenuColor;
+	padding: 0.2em 1em 0.2em 0.2em;
+	position: absolute;
+	top: 4em;
+	right: 1.4em;
+	z-index: 9;
+	@media #{$phone} {
+		position: fixed;
+		padding: 0.2em 1em 0.4em 0.2em;
+		top: 0;
+		right: 34%;
+		z-index: 100;
+		@include transition(top 0.25s linear);
+		&.moving{
+			top: -3em;
+		}
+	}
 	i{
 		color: $background-color-secondary;
 		font-size: 1.5em;
@@ -100,9 +143,10 @@ body.is-logged-out{
 	a{
 		text-decoration: none;
 		span{
+			color: $background-color;
 			font-size: 0.8em;
 			vertical-align: text-top;
-			text-decoration: underline;
+			text-decoration: none;
 			@media #{$phone} {
 				display:none;
 			}
@@ -111,22 +155,56 @@ body.is-logged-out{
 }
 
 #toolMenu{
+	background: $toolMenuColor;
+	display: block;
+	position: fixed;
+	top: #{$header-size + 3px };
+	left: $tool-menu-width;
+	width: 6.85em;
+	margin: 0 0 0 0;
+	height: calc(100% - #{$header-size});
+	overflow-y: auto;
+	overflow-x: hidden;
+	@media #{$phone}{ 
+	}
+	@media #{$phone}{
+		left: -#{$icon-size * 2};
+		top: 0px;
+		height: 100%;
+		width: #{$icon-size * 2};
+		z-index: 9;
+		@include transition(left 0.25s linear);
+		.#{$namespace}toolsNav__menuitem--title{
+			display: inline-block;
+			width:   #{$icon-size - 5px };
+			height:  $icon-size;
+			letter-spacing: 2em;
+			padding: 0px 0 0 5px;
+			overflow: hidden;
+			@include border-radius( $icon-size );
+			@include box-shadow(  0 0 5px rgba( $background-color ,0.5) );
+		}
+	}
+	@include transition(linear 0.25s linear);
 	ul{
 		padding: 0;
 		li{
 			.#{$namespace}toolsNav__menuitem--icon{
-				margin: 0 0.25em 0 0;
+				display: block;
+				font-size: 1.6em;
+				margin: 0.2em 0 0.5em 0;
 			}
 			a{
-				border-bottom: 1px solid lighten( $text-color, 5% );
+				border-bottom: 1px solid #494949;
 				color: $background-color;
 				display: block;
-				font-family: $header-font-family;
+				font-size: #{ $default-font-size - 2px };
 				font-weight: 300;
-				padding: 0.6em 1em;
+				padding: 0.6em 0.3em;
+				text-align: center;
 				text-decoration: none;
 				&:hover{
-					background: $primary-color;
+					background: $background-color;
 					color: #{$toolMenuColor};
 				}
 				@media #{$phone}{
@@ -136,10 +214,7 @@ body.is-logged-out{
 			&.is-current{
 				background: $background-color;
 				a{
-					color: $toolMenuColor;
-					.#{$namespace}toolsNav__menuitem--title{
-						font-weight: 700;
-					}
+					color: $secondary-color;
 					&:hover{
 						background: $background-color;
 					}

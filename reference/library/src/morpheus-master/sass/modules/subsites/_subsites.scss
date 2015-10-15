@@ -1,0 +1,28 @@
+#subSites{
+	position: absolute;
+	display: none;
+	top: 0;
+	left: #{ $tool-menu-width + 6.85em };
+	background: #494949;
+	width: $tool-menu-width;
+	max-width: calc( 100% - #{ $tool-menu-width + 6.85em } );
+	@media #{$phone}{
+		left: 12.8em;
+		max-width: calc( 100% - 12.8em );
+		margin: -2em 0 0 0;
+	}
+	a{
+		border-bottom: 1px solid #626262;
+		color: $background-color;
+		display: block;
+		padding: 1em 0.5em 1em 0.9em;
+		font-size: 0.8em;
+		text-decoration: none;
+		text-transform: uppercase;
+		&:hover{
+			color: $background-color;
+			background: lighten( #494949, 10% );
+			@include box-shadow( inset 0 0 10px rgba(0,0,0,0.25) );
+		}
+	}
+}

@@ -1,4 +1,4 @@
-html[dir="rtl"]{
+/*html[dir="rtl"]{
 	body{
 		.is-logged-out{
 			#content, .#{$namespace}container--footer{
@@ -89,7 +89,7 @@ html[dir="rtl"]{
  				}
  			}
  		}
- 		/* Responsive */
+ 		// Responsive 
  		@media #{$phone}{
  			&.toolsNav--displayed{
  				#toolMenuWrap{
@@ -105,4 +105,4 @@ html[dir="rtl"]{
  			}
  		}
 	}
-}
+}*/

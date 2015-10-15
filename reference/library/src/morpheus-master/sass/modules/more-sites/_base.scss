@@ -6,7 +6,7 @@
 	position: fixed;
 	@include transition( left 0.4s linear );
 	&.dhtml_more_tabs{
-		background: $toolMenuColor;
+		background: $background-color-secondary;
 		display: block;
 		position: fixed;
 		top: 0;
@@ -20,7 +20,8 @@
 		@include box-shadow( 5px 0 50px 0px rgba(0,0,0,0.5) );
 		@media #{$phone}{
 			width: 85% ;
-			left: 15%  ;
+			left: 15%;
+			padding: 1em 1em 3em 1em;
 		}
 	}
 	&.outscreen{
@@ -59,7 +60,7 @@ ul.otherSitesCategorList{
 			}
 		}
 		&.is-selected{
-			background: lighten($background-color, 10%);
+			background: $primary-color;
 			a{
 				color: $background-color-secondary;
 				.fullTitle{

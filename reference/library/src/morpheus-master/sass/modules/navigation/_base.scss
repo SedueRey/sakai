@@ -1,5 +1,5 @@
 body.is-logged-out{
-	.#{$namespace}loginUser{
+	/*.#{$namespace}loginUser{
 		li{
 			a{
 				.login-Icon{
@@ -15,7 +15,7 @@ body.is-logged-out{
 		@media #{$phone}{
 			min-height:4.2em;
 		}
-	}
+	}*/
 }
 
 .#{$namespace}mainHeader{
@@ -25,20 +25,17 @@ body.is-logged-out{
 		overflow: 	hidden;
 		text-align: left;
 		width: 		$tool-menu-width;
-
+		height: 	43px;
 		@include transition(width 0.5s linear);
 		@media #{$phone}{
 			width: 0px;
 		}
 		.#{$namespace}headerLogo--institution{
 			background: url($logo) no-repeat center center;
-			width: 		50px;
-			height: 	30px;
+			width: 		162px;
+			height: 	43px;
 			display:	inline-block;
-			margin:		0.6em 1.5em 0 4em;
-			@media #{$phone}{
-				display: none;
-			}
+			margin:		0 0 0 0;
 		}
 	}
 	
@@ -68,7 +65,7 @@ body.is-logged-out{
 
 	&.is-maximized{
 		.siteNavWrap{
-			overflow: hidden;
+			/*overflow: hidden;
 			background-color: $background-color-secondary; // Old browsers
 			@include filter-gradient($background-color-secondary, darken($background-color-secondary, 5%), horizontal); // IE6-8
 			// IE9 SVG, needs conditional override of 'filter' to 'none'
@@ -76,7 +73,7 @@ body.is-logged-out{
 			@include background-image(linear-gradient(left, $background-color-secondary 78%, darken($background-color-secondary, 5%) 100%));
 			@media #{$phone}{
 				background: $background-color-secondary;
-			}
+			}*/
 		}
 	}
 	@media #{$phone}{
@@ -98,9 +95,9 @@ body.is-logged-out{
 }
 
 .userNav__subnav{
-	position: absolute;
+	/*position: absolute;
 	width: $tool-menu-width;
-	z-index: 99;
+	z-index: 99;*/
 	@include box-shadow( 0 0 4px rgba( $text-color ,0.35) );
 	li{
 		display: block;
@@ -123,8 +120,8 @@ body.is-logged-out{
 		}
 	}
 	&.is-visible{
-		display: block;
-		margin: 0.4em 0 0 0.4em;
+		/*display: block;
+		margin: 0.4em 0 0 0.4em;*/
 	}
 	&.is-hidden{
 		display: none;
@@ -134,8 +131,25 @@ body.is-logged-out{
 .#{$namespace}topHeader{
 	background: $primary-color;
 	color: $background-color-secondary;
+	border-bottom: 3px solid darken( $primary-color, 5% );
 	font-size: 0.9em;
-	text-align: right;
+	position: fixed;
+	text-align: left;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 1;
+	@media #{$phone}{
+		position: fixed;
+		width: 100%;
+		top: 0;
+		&.moving{
+			top: -4.2em;
+			#mastLogin #loginLinks ul.#{$namespace}userNav__subnav{
+				display: none;
+			}
+		}
+	}
 	a{
 		color: $background-color-secondary;
 	}
@@ -150,8 +164,8 @@ body.is-logged-out{
 }
 
 #mastLogin{
-
-	width: calc( 100% - #{$tool-menu-width} - 4px ); //Fix for inline-block margin.
+	float: right;
+	max-width: calc( 100% - #{$tool-menu-width} - 4px ); //Fix for inline-block margin.
 	@media #{$phone}{
 		width: auto;
 	}
@@ -193,6 +207,7 @@ body.is-logged-out{
 		display: block;
 		padding: 0.9em 1.5em 0.9em 0.9em;
 		margin: 0 0.8em 0 0;
+		font-weight: 300;
 		&.has-avatar{
 			padding: 0em 1.5em 0.8em 0px;
 			position: relative;
@@ -224,7 +239,12 @@ body.is-logged-out{
 	}
 
 	.#{$namespace}loginUser{
-		padding: 0.9em 0.5em;
+		padding: 0.8em 0.5em;
+		@media #{$phone}{
+			.#{$namespace}login-Message{
+				display: none;
+			}
+		}
 	}
 
 	.#{$namespace}userNav__drop{
@@ -235,7 +255,7 @@ body.is-logged-out{
 		float: right;
 		position: relative;
 		margin-top: -2.5em;
-		padding: 18px 22px 27px 14px;
+		padding: 15px 22px 27px 14px;
 		display: block;
 		left: 12px;
 		&.is-clicked{
@@ -253,6 +273,8 @@ body.is-logged-out{
 			text-align: left;
 			padding: 0.5em;
 			margin: -0.5em 0 0 2.6em;
+			position: absolute;
+			width: $tool-menu-width;
 			@extend .userNav__subnav;
 			@media #{$phone}{
 				margin: -0.5em 0 0 -9em;
@@ -275,7 +297,7 @@ body.is-logged-out{
 .#{$namespace}sitesNav__menu{
 	margin-bottom:0px;
 }
-.#{$namespace}sitesNav__menuitem--myworkspace{
+/*.#{$namespace}sitesNav__menuitem--myworkspace{
 	@media #{$phone}{
 		background: $primary-color;
 	}
@@ -320,40 +342,66 @@ body.is-logged-out{
 			font-size: 1.7em;
 		}
 		&:hover{
-			/*color: $background-color-secondary;*/
+			//color: $background-color-secondary;
 			@include box-shadow( inset 0 9px 10px rgba(0,0,0,0.25) );
 		}
 	}
+}*/
+
+#searchSites{
+	color: $background-color;
+	left: 0;
+	padding: 0.6em 0.7em 0 0.5em;
+	position: fixed;
+	top: #{$header-size + 3px };
+	width: $tool-menu-width;
+	z-index: 999;
+	@media #{$phone}{
+		display: none;
+	}
+	#qsites{
+		border: 1px solid darken( #494949, 5% );
+		font-size: 12px;
+		margin: 0 0.5em 0 0;
+		padding: 0.3em;
+		width: calc(100% - 24px);
+	}
 }
 
-#linkNav{
-	background: darken( $background-color-secondary, 5% );
-	max-height: $header-size;
-	min-height: $header-size;
-	overflow: hidden;
-	left: 3.1em;
-	width: calc(100% - 3em);
-	padding-left:3em;
+##{$namespace}sites-nav{
+	background: #494949;
+	overflow: auto;
+	top: #{$header-size + 3px };
+	border-top: 3px solid darken( #494949, 5% );
+	left: 0;
+	padding: 3em 0 0 0;
+	position: fixed;
+	width: $tool-menu-width;
+	height: calc(100% - #{ $header-size + 3px });
+	border-right: 1px solid #404040;
+	@include box-shadow( 0 5px 10px rgba(0,0,0,0.5) );
+	z-index: 99;
 	// @include transition(height 0.5s linear);
 	ul{
-		font-family: $header-font-family;
-		font-weight: $header-font-weight;
 		margin: 0 0 0 0;
 		li.#{$namespace}sitesNav__menuitem{
-			display: inline-block;
-			margin: 1px 0 0 -4px; //Fix for inline-block space items;
+			display: block;
+			margin: 0 0 0 0; //Fix for inline-block space items;
 			a{
-				border-right: 1px solid darken( $background-color-secondary, 10% );
-				color: $text-color;
+				border-bottom: 1px solid #626262;
+				color: $background-color;
 				display: block;
-				padding: 0.8em 0.7em 0.8em 1.1em;
+				padding: 1em 0.5em 1em 0.9em;
+				font-size: 0.8em;
 				text-decoration: none;
+				text-transform: uppercase;
 				&:hover{
-					color: $primary-color;
-					@include box-shadow( inset 0 0 15px rgba(100,100,100,0.5) );
+					color: $background-color;
+					background: lighten( #494949, 10% );
+					@include box-shadow( inset 0 0 10px rgba(0,0,0,0.25) );
 				}
 			}
-			.#{$namespace}sitesNav__drop{
+			/*.#{$namespace}sitesNav__drop{
 				@extend .fa-angle-down;
 				@extend .fa;
 				@extend .fa-lg;
@@ -363,31 +411,31 @@ body.is-logged-out{
 					position: relative;
 					top: 3px;
 				}
-			}
+			}*/
 			ul{
 				background: darken( $background-color-secondary, 5% );
 				display: none;
 				@extend .userNav__subnav;
 			}
 			&.is-selected{
-				background: $background-color;
-				color: $background-color-secondary;
+				background: $primary-color;
+				@include box-shadow( inset 0 0 10px rgba(0,0,0,0.25) );
 				a{
-					border-right: 0px none;
-					color: $background-color-secondary;
 					padding: 0.8em 0.9em 0.8em 0.9em;
+					background: $primary-color;
+					@include box-shadow( inset 0 0 10px rgba(0,0,0,0.25) );
 					.#{$namespace}sitesNav__drop{
 						display: none;
 					}
 					&:hover{
-						@include box-shadow( inset 0 9px 10px rgba(0,0,0,0.25) );
+						color: $background-color;
 					}
 				}
 				ul{
 					background: $background-color;
 				}
 			}
-			&.#{$namespace}sitesNav__menuitem--myworkspace{
+			/*&.#{$namespace}sitesNav__menuitem--myworkspace{
 				background: $primary-color;
 				border-right: 1px solid darken( $primary-color, 5% );
 				font-size: 0.95em;
@@ -417,7 +465,7 @@ body.is-logged-out{
 						color: $background-color-secondary;
 					}
 				}
-			}
+			}*/
 		}
 	}
 	&.scrolled-sites{
@@ -427,7 +475,7 @@ body.is-logged-out{
 			}
 			#show-all-sites{
 				background: darken( $background-color-secondary, 5% );
-				display: inline-block;
+				display: none;
 				cursor: pointer;
 				position: absolute;
 				text-align: center;
@@ -482,6 +530,9 @@ body.is-logged-out{
 }
 
 #show-all-sites-mobile{
+
+	display: none;
+
 	color: $background-color-secondary;
 	background: lighten( $background-color, 5% );
 	display: none;
@@ -521,8 +572,38 @@ body.is-logged-out{
 }
 
 .#{$namespace}breadCrumbs{
-	margin:auto;
-	max-width: calc( 50% - 3em);
+	background: #fcf8e3;
+	border: 1px solid #f5e79e;
+	font-size: 0.8em;
+	left: 25.7em;
+	padding: 0.5em;
+	position: absolute;
+	top: 16px;
+	li{
+		display: inline-block;
+		max-width: 30%;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
+		a{
+			text-decoration: none;
+			color: $secondary-color;
+		}
+		&:before{
+			content: " > ";
+			display: inline-block;
+		}
+		&:first-child{
+			&:before{
+				content: "";
+			}
+		}
+	}
+	~ .#{$namespace}container{
+		#content{
+			padding-top: 4em;
+		}
+	}
 }
 
 .#{$namespace}siteStatus{
