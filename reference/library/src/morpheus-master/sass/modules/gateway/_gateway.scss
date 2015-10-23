@@ -1,0 +1,122 @@
+#skipNav, 
+.#{$namespace}container--footer, 
+#selectSite, 
+.skip, 
+#show-all-sites, 
+.#{$namespace}toolsNav__title--current-site,
+.#{$namespace}directUrl__dropDown{
+	display: none !important;
+}
+
+#mastLogin{
+	float: right;
+	ul{
+		margin:  1em 1em 0 0;
+		li{
+			display: inline-block;
+			a{
+				color: #FFF;
+				padding: 0 0.8em 0.8em 0.8em;
+				margin:  1em 1em 0 0;
+				text-decoration: none;
+				border-bottom: 1px solid rgba(#FFF, 0.5);
+				&:hover{
+					border-bottom: 3px solid #FFF;
+				}
+			}
+		}
+	}
+}
+
+#topnav{
+	float: left;
+	margin:  0.5em 1em 0 0em;
+	@media #{$phone}{
+		margin:  1em 1em 0 1em;
+	}
+	li{
+		display: inline-block;
+		a{
+			color: #FFF;
+			padding: 0 1em 0.8em 1em;
+			margin:  1em 1em 0 0;
+			text-decoration: none;
+			border-bottom: 1px solid rgba(#FFF, 0.5);
+			&:hover{
+				border-bottom: 3px solid #FFF;
+			}
+			@media #{$phone}{
+				padding: 0 1em 0.2em 1em;
+				margin:  1em 1em 0 0;
+			}
+		}
+	}
+}
+
+.#{$namespace}headerLogo--institution{
+	background: url($logo) no-repeat center center;
+	width: 		417px;
+	height: 	45px;
+	display:	inline-block;
+	margin: 1em 1.5em 0 1em;
+	background-size: 100%;
+	@media #{$phone}{
+		max-width: calc(100% - 32px);
+	}
+}
+
+#toolMenu{
+	clear: both;
+	float: left;
+	margin: 2em 0 0 0;
+	@media #{$phone}{
+		width: calc(100% - 16px);
+	}
+	a{
+		background: rgba(#FFF, 0.85);
+		border: 1px solid rgba( $text-color, 0.5 );
+		color: $text-color;
+		display: block;
+		padding: 0.8em 1.2em;
+		text-decoration: none;
+		margin: 0em 0em 1.4em 1em;
+		&:hover{
+			background: $primary-color;
+			border: 1px solid $primary-color;
+			color: #ffffff;
+		}
+	}
+	li.is-current{
+		a{
+			background: $primary-color;
+			border: 1px solid $primary-color;
+			color: #ffffff;	
+		}	
+	}
+}
+
+#content{
+	background: $background-color;
+	margin: 2em 0 0 19.1em;
+	width: $measure;
+	padding: 2em;
+	position: relative;
+	top: 16.5em;
+	margin-top: 2em;
+	margin-right: 4em;
+	margin-bottom: 0;
+	margin-left: calc(100% - $measure - 8em);
+	@media #{$phone}{
+		width: calc(100% - 64px);
+		margin: 16px 16px 16px 16px;
+		clear: both;
+		padding: 16px;
+		position: inherit;
+		top: 0em;
+	}
+}
+
+.#{$namespace}toolTitleNav__title{
+	color: $primary-color;
+	border-bottom: 1px solid rgba($text-color, 0.5);
+}

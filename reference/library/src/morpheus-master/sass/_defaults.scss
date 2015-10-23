@@ -23,17 +23,17 @@ $font-family: "Noto Sans", "Helvetica Neue", Arial, sans-serif !default;
 $default-font-size: 14px !default;
 $default-font-weight: 400 !default;										// 300, 400 or 700 as you wish
 $header-font-family: "Raleway", Arial, sans-serif !default;
-$header-font-weight: 300 !default;										// 300, 400 or 700 as you wish
+$header-font-weight: 700 !default;										// 300, 400 or 700 as you wish
 
 /* Color palette */
-$background-color: 			 #454545 !default;
+$background-color: 			 #FFF !default;
 $background-color-secondary: #F8F8F8 !default;
 
 $tool-background-color:		 #ffffff !default;
-$toolMenuColor: 			 #F8F8F8 !default;
+$toolMenuColor: 			 #666666 !default;
 
-$primary-color:    			 #43a7c8 !default;
-$secondary-color:  			 #F00 !default;
+$primary-color:    			 #b01b2f !default;
+$secondary-color:  			 #0099cc !default;
 
 $text-color:				 #363636 !default;
 
@@ -58,10 +58,10 @@ $swapped-view-text-color:	 #302436 !default;
 
 
 /* Main Menu */
-$header-size : 3.1em !default;
+$header-size : 43px !default;
 
 /* Tool Menu */
-$tool-menu-width: 14.5em !default;
+$tool-menu-width: 12.85em !default;
 
 /* Golden Ratio width for 16px font http://www.pearsonified.com/typography/ */
 $measure: 960px !default;

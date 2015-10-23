@@ -7,6 +7,22 @@ body{
 	line-height: 1.55;					// http://practicaltypography.com/line-spacing.html
 	&.#{$namespace}portalBody{
 		background:  $background-color;
+		@media #{$desktop}{
+			background-size: 100%;
+			background: $background-color url(images/bg.jpg) no-repeat top left fixed; 
+			-webkit-background-size: cover;
+			-moz-background-size: cover;
+			-o-background-size: cover;
+			background-size: cover;
+		}
+		@media #{$phone}{
+			background-size: 100%;
+			background: $background-color url(images/bg_mobile.jpg) no-repeat top left fixed; 
+			-webkit-background-size: cover;
+			-moz-background-size: cover;
+			-o-background-size: cover;
+			background-size: cover;
+		}
 	}
 }
 
