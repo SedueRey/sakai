@@ -376,7 +376,7 @@ body.is-logged-out{
 	left: 0;
 	padding: 3em 0 0 0;
 	position: fixed;
-	width: $tool-menu-width;
+	width: 14.25em; // SAKAI BOOTCAMP
 	height: calc(100% - #{ $header-size + 3px });
 	border-right: 1px solid #404040;
 	@include box-shadow( 0 5px 10px rgba(0,0,0,0.5) );

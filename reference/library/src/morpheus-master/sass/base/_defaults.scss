@@ -112,3 +112,8 @@ u, ins {
 s, strike, del {
 	text-decoration: line-through;
 }
+
+/* SAKAI BOOT CAMP */
+.Mrphs-directUrl__dropDown, .Mrphs-container--toolTitleNav .Mrphs-itemTitle, .Mrphs-collapseTools{
+	display: none;
+}
