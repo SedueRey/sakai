@@ -33,10 +33,10 @@
 
 @mixin bs-callout($color, $bgcolor) {
   display: block;
-  margin: 20px 0;
-  padding: 15px 30px 15px 15px;
+  margin: 15px 0 5px 0;
+  padding: 5px 10px 5px 5px;
   border: 1px solid;
-  border-left-width: 5px;
+  border-left-width: 2px;
   border-color: lighten($color, 25%);
   border-left-color: $color;
   color: darken($color, 30%);
@@ -54,7 +54,7 @@
 }
 
 .bs-callout-primary, .bs-callout-info, .messageInformation, .messageInstruction, .messageProgress {
-  @include bs-callout($primary-color, lighten($primary-color, 45%));
+  @include bs-callout(#259bcd, lighten(#259bcd, 45%));
 }
 
 .bs-callout-success, .messageValidation, .messageSuccess {
@@ -137,23 +137,23 @@
 }
 
 @mixin sakai_button( $button-background-color, $button-border-color, $button-text-color, $button-background-secondary-color ){
-	background: $button-background-color;
+	background: linear-gradient( $button-background-secondary-color, $button-background-color );
 	border: 1px solid $button-border-color;
 	color: $button-text-color !important;
 	cursor: pointer;
 	display: inline-block;
-	font-family: $font-family;
-	font-size: #{ $default-font-size - 2 };
+	font-family: $header-font-family;
+	font-size: #{ $default-font-size - 3 };
 	letter-spacing: 0.8px;
-	line-height: 18px;
-	margin: 0.5em 0.8em 0.5em 0;
-	padding: 0.4em 0.8em 0.45em 0.8em;
+	line-height: 1;
+	margin: 0.5em 0.2em 0.5em 0;
+	padding: 0.7em 0.8em 0.7em 0.8em;
 	text-decoration: none !important;
 	@include appearance(none);
 	@include border-radius(3px);
 	&:hover{
+		background: $button-background-color;
 		text-decoration: none;
-		background: linear-gradient( $button-background-secondary-color, $button-background-color );
 	}
 	&:active{
 		outline: 0;

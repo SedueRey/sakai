@@ -23,7 +23,7 @@
 
 .#{$namespace}toolTitleNav{
 	margin: 1em 0 0 0;
-	padding: 0.5em;
+	padding: 0.5em 0.8em 0.5em 1em;
 	position: relative;
 	.#{$namespace}toolTitleNav__title{
 		display: none;
@@ -65,11 +65,11 @@
 	}
 	.#{$namespace}toolTitleNav__button_container{
 		float: right;
-		display: block;
-		position: relative;
-		margin: 0px 0 -20px 0;
-		top: 9px;
-		z-index: 1;
+	    display: block;
+	    position: relative;
+	    margin: 0px 0 -20px 0;
+	    top: 9px;
+	    z-index: 1;
 		@media #{$tablet}{
 			left: 0.35em;
 			font-size: 1.5em;
@@ -79,7 +79,7 @@
 		}
 	}
 	.#{$namespace}toolTitleNav__link{
-		//color: lighten( $text-color, 70% );
+		color: #259bcd;
 		border: 1px solid #e0e0e0;
 		background: $toolTabBGColor;
 		margin-right: 0.25em;
@@ -88,7 +88,7 @@
 		vertical-align: 0%;
 		&:hover{
 			background: $tool-background-color;
-			color: $primary-color;
+			color: lighten(#259bcd, 5%);
 			box-shadow: 0 0 6px 0 rgba(0,0,0,.15);
 		}
 		@media #{$tablet}{
@@ -126,8 +126,8 @@
 			@extend .fa;
 			@extend .fa-share;
 			//@extend .fa-lg;	
-			display: none;
-			font-size: 0.9em;
+			//display: none;
+			font-size: 0.8em;
 			float: left;
 		}
 		.#{$namespace}itemTitle{

@@ -30,7 +30,7 @@ body.#{$namespace}toolMenu-collapsed{
 			li{
 				a{
 					min-height: 1.7em;
-					&:hover{
+					/*&:hover{
 						.#{$namespace}toolsNav__menuitem--title{
 							position: absolute;
 							display: block;
@@ -44,7 +44,7 @@ body.#{$namespace}toolMenu-collapsed{
 							border-radius: 0 15px 15px 0;
 							line-height: 100%;
 						}
-					}
+					}*/
 					&.is-invisible {
 						&:after {
 							display: none;
@@ -216,7 +216,7 @@ nav#subSites{
 				color: $toolMenuColor;
 				display: block;
 				font-family: $header-font-family;
-				font-weight: 300;
+				font-weight: 400;
 				font-size: 0.85em;
 			    line-height: 1.25;
 			    min-height: 3em;
@@ -260,19 +260,18 @@ nav#subSites{
 			&.is-current{
 				background: $background-color;
 				a{
-					border-left: 4px solid $primary-color;
-					border-bottom: 1px solid $primary-color;
+					/*border-left: 4px solid $primary-color;
+					border-bottom: 1px solid $primary-color;*/
 					color: $primary-color;
 					.#{$namespace}toolsNav__menuitem--title{
 						font-weight: 700;
 					}
 					&:hover{
-						background: $primary-color;
 						color: $tool-background-color;
 					}
 					@media #{$phone}{
-						border: 1px solid $primary-color;
-						border-left: 1px solid $primary-color;
+						/*border: 1px solid $primary-color;
+						border-left: 1px solid $primary-color;*/
 					}
 				}
 			}
