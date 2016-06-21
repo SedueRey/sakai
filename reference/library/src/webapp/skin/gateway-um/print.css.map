@@ -1,0 +1,10 @@
+{
+	"version": 3,
+	"file": "print.css",
+	"sources": [
+		"../../../gateway-um/sass/print.scss",
+		"../../../gateway-um/sass/print.scss/JSASS_CUSTOM.scss"
+	],
+	"mappings": "",
+	"names": []
+}

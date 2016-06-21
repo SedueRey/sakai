@@ -1,0 +1,10 @@
+{
+	"version": 3,
+	"file": "portal.css",
+	"sources": [
+		"../../../gateway-um/sass/portal.scss",
+		"../../../gateway-um/sass/portal.scss/JSASS_CUSTOM.scss"
+	],
+	"mappings": "",
+	"names": []
+}
