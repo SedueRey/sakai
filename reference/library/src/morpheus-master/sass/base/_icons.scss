@@ -103,4 +103,8 @@
 	.icon-sakai-umusync{ @extend .fa-gear; }
 	.icon-sakai-umugdocentepub{ @extend .fa-file-o; }
 	.icon-sakai-umucorrige{ @extend .fa-list; }
+	// Contrib tools
+	.icon-sakai-clog{ @extend .fa-sticky-note-o; }
+	.icon-sakai-videoconference-connect{ @extend .fa-video-camera; }
+	.icon-sakai-presence{ @extend .fa-users; }
 }
