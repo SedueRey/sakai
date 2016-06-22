@@ -13,6 +13,10 @@ body{
 		background-size: auto 100%;
 		background-position: top left;
 		background-attachment: fixed;
+		background-repeat: no-repeat;
+		@media screen and (orientation:landscape){
+			background-size: 100% auto;
+		}
 		@media #{$phone}{
 			padding-top: 80%;
 		}
@@ -82,8 +86,9 @@ form, table{
 }
 
 h1, h2, h3, h4, h5, h6{
+	color: #212121;
 	font-family: $header-font-family;
-	font-weight: 700;
+	font-weight: $header-font-weight;
 	line-height: 1.05;
 	margin: 0.75em 0 0.5em 0;
 }
@@ -182,6 +187,10 @@ ul, ol{
 	ul{
 		list-style: square;
 		padding: 0 0 0 1.2em;
+		&.synopticList{
+			list-style: none;
+			padding: 0 0 0 0;
+		}
 	}
 	ol{
 		list-style: decimal;
@@ -215,7 +224,3 @@ button[class="disabled"]:hover,
 	cursor: not-allowed;
 	text-decoration: none;
 }
-
-/*ul, ol {
-    padding: 0 0 0 1.5em;
-}*/
