@@ -1,4 +1,3 @@
-/* XLogin over portal body */
 
 $PBJQ(document).ready(function(){
 
@@ -28,4 +27,12 @@ $PBJQ(document).ready(function(){
     });
   }
 
+});
+
+$(window).scroll(function(){
+  if( $(document).scrollTop() > 144 ){
+    $('#toolMenu').addClass('scrolled');
+  } else {
+    $('#toolMenu').removeClass('scrolled');
+  }
 });
