@@ -13,6 +13,10 @@
 	h1{ font-size: 32px; }
 	h2{ font-size: 24px; color: #525252; }
 	h3{ font-size: 18px; }
+	@media #{$tablet}{
+		margin: 0 0 0 400px;
+		padding: 120px 30px 60px 30px;
+	}
 	@media #{$phone}{
 		padding: 16px 16px 16px 16px;
 	    margin: 100% 0 0 0;
@@ -35,6 +39,9 @@
 	position: fixed;
 	top: 60px;
 	left: 84px;
+	@media #{$tablet}{
+		left: 30px;
+	}
 	@media #{$phone}{
 		position: absolute;
 		top: 16px;
@@ -65,6 +72,9 @@ body.#{$namespace}portalBody.is-logged-out:before{
 	left: 85px;
 	font-size: 54px;
 	font-family: $header-font-family;
+	@media #{$tablet}{
+		left: 30px;
+	}
 	@media #{$phone}{
 		font-size: 48px;
 		position: absolute;
@@ -81,6 +91,9 @@ body.#{$namespace}portalBody.is-logged-out:after{
 	left: 82px;
 	font-size: 28px;
 	font-family: $header-font-family;
+	@media #{$tablet}{
+		left: 27px;
+	}
 	@media #{$phone}{
 		font-size: 24.7px;
 		position: absolute;
@@ -94,6 +107,9 @@ body.#{$namespace}portalBody.is-logged-out:after{
 	top: 55px;
 	right: 16px;
 	z-index: 2;
+	@media #{$small-desktop}{
+		top: 8px;
+	}
 	@media #{$phone}{
 		bottom: 0;
 		position: absolute;
@@ -169,6 +185,10 @@ body.#{$namespace}portalBody.is-logged-out:after{
 	&.scrolled{
 		box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.1);
 	}
+	@media #{$tablet}{
+		margin-left: -30px;
+		padding: 60px 0 20px 15px;
+	} 
 	@media #{$phone}{ 
 		background: transparent;
 		left: 16px;
@@ -206,6 +226,9 @@ body.#{$namespace}portalBody.is-logged-out:after{
 				text-decoration: none;
 				padding: 0 2em;
 				line-height: 1;
+				@media #{$tablet}{
+					padding: 0 1em;
+				}
 				@media #{$phone}{
 					color: #FFF;
 					padding: 0 0 0 0;

@@ -1,6 +1,8 @@
 
 $PBJQ(document).ready(function(){
 
+  $PBJQ('.Mrphs-portalWrapper').css('min-height', $PBJQ(window).innerHeight(true) );
+
   if( $PBJQ('#loginLink2').length == 1 ){
 
     $PBJQ('#loginLink2').click( function( e ){

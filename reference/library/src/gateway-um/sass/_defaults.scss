@@ -4,10 +4,12 @@ $namespace : "Mrphs-";
 $skin-name : "morpheus-default"; // This is used for bootstrap font behaviour.
 
 $break-small-end: 	800px;
-$break-medium-end: 	1030px;
+$break-medium-end: 	1400px;
+$break-medium-tablet-end: 	1160px;
 
 $phone  :       "only screen and (max-width : #{ $break-small-end })";
 $tablet :       "only screen and (max-width : #{ $break-medium-end })";
+$small-desktop: "only screen and (max-width : #{ $break-medium-tablet-end - 1 })";
 $desktop:       "only screen and (min-width : #{ $break-medium-end + 1 })";
 $nonPhone:      "only screen and (min-width : #{ $break-small-end + 1 })";
 
