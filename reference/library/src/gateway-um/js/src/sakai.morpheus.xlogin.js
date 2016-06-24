@@ -1,6 +1,8 @@
 
 $PBJQ(document).ready(function(){
 
+  $PBJQ("details.Mrphs-footer--details__build-info", "#footer").attr('open', '');
+
   $PBJQ('.Mrphs-portalWrapper').css('min-height', $PBJQ(window).innerHeight(true) );
 
   if( $PBJQ('#loginLink2').length == 1 ){
