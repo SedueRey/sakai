@@ -3,7 +3,7 @@
 	.form-required{
 		&:after{
 			content: "*";
-			color: $error-color;
+			color: darken($error-color, 30%);
 			position: relative;
 			top: 3px;
 		}		

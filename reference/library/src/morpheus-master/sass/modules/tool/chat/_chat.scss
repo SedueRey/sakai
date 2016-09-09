@@ -4,6 +4,10 @@
 
 @import "_chat_variables";
 
+#footerAppPresence{
+	display: none;
+}
+
 .Mrphs-{
 	&sakai-chat{
 		#chatLeft{

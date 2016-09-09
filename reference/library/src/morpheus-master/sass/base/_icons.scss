@@ -29,7 +29,7 @@
 	.icon-sakai-resources{					@extend .fa-folder-open;}
 	.icon-sakai-dropbox{					@extend .fa-exchange;}
 	.icon-sakai-assignment-grades{				@extend .fa-file-text;}
-	.icon-sakai-samigo{					@extend .fa-check-square-o;}
+	.icon-sakai-samigo{					@extend .fa-list-ol;}
 	.icon-sakai-gradebook-tool{				@extend .fa-book;}
 	.icon-sakai-gradebookng{				@extend .fa-book;}
 	.icon-sakai-announcements{				@extend .fa-bullhorn;}
@@ -84,11 +84,28 @@
 	.icon-sakai-feedback{					@extend .fa-paper-plane-o;}
 	.icon-sakai-subsite{					@extend .fa-level-up;}
 	.icon-sakai-subsites-list{				@extend .fa-level-down; }
-	.icon-sakai-home{					@extend .fa-university;}
-	.icon-sakai-delete{					@extend .fa-times;}
-	.icon-sakai-pdf{					@extend .fa-file-pdf-o;}
-	.icon-sakai-clip{					@extend .fa-paperclip;}
-	.icon-sakai-check{					@extend .fa-check;}
-	.icon-sakai-rsf-evaluation{				@extend .fa-commenting;}
-	.icon-sakai-bbb{					@extend .fa-video-camera;}
+	.icon-sakai-home{                       @extend .fa-university;}
+	.icon-sakai-delete{                     @extend .fa-times;}
+	.icon-sakai-pdf{                        @extend .fa-file-pdf-o;}
+	.icon-sakai-clip{                       @extend .fa-paperclip;}
+	.icon-sakai-check{                      @extend .fa-check;}	
+	// icons for UM Tools
+	.icon-sakai-umugdocente, .icon-sakai-umugdocentevalida{ @extend .fa-map-o; }
+	.icon-sakai-umumakesites{ @extend .fa-plus-square; }
+	.icon-sakai-umuactas{ @extend .fa-file-excel-o; }
+	.icon-sakai-umullamamientos{ @extend .fa-bullhorn; }
+	.icon-sakai-synoptic-announcement{ @extend .fa-university; } 
+	.icon-sakai-umutf{ @extend .fa-briefcase; }
+	.icon-sakai-umusolicitudes{ @extend .fa-map-marker; }
+	.icon-sakai-umualumnado{ @extend .fa-users; }
+	.icon-sakai-umuinnova{ @extend .fa-gear; }
+	.icon-sakai-umuaddusers, .icon-sakai-umuadduser{ @extend .fa-user-plus; }
+	.icon-sakai-umusync{ @extend .fa-gear; }
+	.icon-sakai-umugdocentepub{ @extend .fa-file-o; }
+	.icon-sakai-umucorrige{ @extend .fa-list; }
+	.icon-sakai-gradebook-gwt-rpc{ @extend .fa-book}
+	// Contrib tools
+	.icon-sakai-clog{ @extend .fa-sticky-note-o; }
+	.icon-sakai-videoconference-connect{ @extend .fa-video-camera; }
+	.icon-sakai-presence{ @extend .fa-users; }
 }

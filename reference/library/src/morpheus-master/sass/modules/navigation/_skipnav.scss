@@ -29,7 +29,7 @@
 	@media #{$phone}{
 		position: fixed;
 		z-index: 20;
-		top: 3.6em;
+		top: 3.2em;
 		left: 0;
 		background: lighten($tool-menu-color, 15% );
 		width: 100%;
@@ -49,11 +49,12 @@
 		}
 		li{
 			@include flex-basis( 50% );
-			border-right: 1px solid #999;
+			&.#{$namespace}skipNav__menuitem--content{
+				display: none;
+			}
 			
-			&:last-of-type
-			{
-			    border-right: 0 none;
+			&.#{$namespace}skipNav__menuitem--tools{
+				border-right: 1px solid #999;
 			}
 			
 			&.#{$namespace}skipNav__menuitem--content,
@@ -62,12 +63,10 @@
 				display: none;
 			}
 			a{
-				@include display-flex( flex );
-				@include justify-content( center );
-				@include align-items( center );
 				color: $background-color;
+				display: block;
 				text-align: center;
-				font-size: 12px;
+				font-size: 11px;
 				padding: 0.7em 0.5em;
 				text-decoration: none;
 				text-transform: uppercase;
@@ -75,12 +74,12 @@
 				max-width: 100%;
 				overflow: hidden;
 				text-overflow: ellipsis;
-				
-				&:hover, &:active
-				{
-				    color: $background-color;
-				    text-decoration: none;
-				    box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.15) inset;
+				&:hover{
+					color: $background-color;
+				}
+				i{
+					font-size: 2em;
+					vertical-align: middle;
 				}
 			}
 		}

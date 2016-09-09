@@ -11,8 +11,18 @@
 		  	color: $background-color;
 		  }
 		}
-		.#{$namespace}mainHeader.is-maximized .siteNavWrap{
-			background: $swapped-view-sites-nav-background;
+		#linkNav ul li.#{$namespace}sitesNav__menuitem{
+			& > a {
+				background: $swapped-view-primary;
+			}
+			
+			&.is-selected a{
+				background: $background-color-secondary;
+			}
+		}
+		
+		.okayNav__nav--invisible{
+			background: $swapped-view-primary;
 		}
 	}
 }
