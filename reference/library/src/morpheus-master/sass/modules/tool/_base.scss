@@ -79,7 +79,7 @@
 		}
 	}
 	.#{$namespace}toolTitleNav__link{
-		//color: lighten( $text-color, 70% );
+		color: #259bcd;
 		border: 1px solid #e0e0e0;
 		background: $tool-tab-background-color;
 		margin-right: 0.25em;
@@ -90,11 +90,12 @@
 			background: $tool-background-color;
 			color: lighten(#259bcd, 5%);
 			box-shadow: 0 0 6px 0 rgba(0,0,0,.15);
+			text-decoration :none;
 		}
 		@media #{$tablet}{
-			background: $tool-background-color;
-			border: 0px none;
-			color: $primary-color;
+			//background: $tool-background-color;
+			//border: 1px solid #259bcd;
+			//color: $primary-color;
 			margin-right: 0em;
 		}
 		/*@media #{$tablet}{

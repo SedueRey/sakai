@@ -168,7 +168,7 @@ nav#subSites{
 		margin: 0 0 0 7px;
 		&:after{
 			right: 100%;
-			top: 25%;
+			top: 17%;
 			border: solid transparent;
 			content: " ";
 			height: 0;
@@ -179,6 +179,24 @@ nav#subSites{
 			border-right-color: darken( $tool-menu-background-color, 10% );
 			border-width: 7px;
 			margin-top: -7px;
+		}
+		ul li a {
+			.#{$namespace}toolsNav__menuitem--title{
+				display: inline-block;
+			    max-width: calc(100% - 24px );
+			    overflow: hidden;
+			    padding: 5px 0;
+			    text-overflow: ellipsis;
+			    white-space: pre;
+			    width: 100%;
+			}
+			.#{$namespace}toolsNav__menuitem--icon{
+				display: inline-block;
+				float: left;
+				margin: 0 0.25em 0 0.25em;
+				position: relative;
+				top: 2px;
+			}
 		}
 	}
 }

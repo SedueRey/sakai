@@ -64,9 +64,17 @@ body.okayNav-loaded {
 }
 .okayNav__nav--invisible .#{$namespace}sitesNav__menuitem > a {
   display: block;
-  width: 250px;
+  max-width: 250px;
   padding: 15px;
   background: #b01a1a;
+  span{
+    max-width: 225px;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: bottom;
+  }
 }
 .okayNav__nav--invisible.nav-left {
   left: 0;

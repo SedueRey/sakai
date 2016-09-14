@@ -35,6 +35,7 @@ body.is-logged-out{
 			display:	inline-block;
 			position: relative;
     		top: 2px;
+    		margin: 0 0 0 4px;
 			@media #{$phone}{
 				margin: 0.2em 0 0 0.2em;
 				float: none;

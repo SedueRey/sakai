@@ -61,7 +61,7 @@
   @include bs-callout($ok-color, lighten($ok-color, 45%));
 }
 .bs-callout-warn, .bs-callout-alert, .messageWarning, .messageConfirmation {
-  @include bs-callout(darken($warn-color, 35%), $warn-color );
+  @include bs-callout( $warn-color, $warn-background-color );
 }
 .bs-callout-danger, .bs-callout-error, .messageError {
   @include bs-callout(darken($error-color, 30%), $error-color );
@@ -98,7 +98,8 @@
 	color: $text-color;
 	font-family: $font-family;
 	font-size: #{$default-font-size - 1};
-	padding: 0.3em 2.2em 0.8em 0.5em;
+	line-height: 1.15;
+	padding: 0.5em 2.2em 0.5em 0.5em;
 	text-align: left;
 	max-width: 100%;
 	@include appearance(none);

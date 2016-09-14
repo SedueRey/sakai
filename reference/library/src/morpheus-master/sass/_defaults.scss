@@ -21,10 +21,11 @@ $more-sites-single-column: "only screen and (max-width : #{ $break-more-sites-si
 /* Typography*/
 
 //Google family Fonts URL
-$font-family-url: "//fonts.googleapis.com/css?family=Roboto:400,700" ;
+//$font-family-url: "//fonts.googleapis.com/css?family=Roboto:400,700" ;
 
 //Typography variables
-$font-family: "Roboto", "Helvetica Neue", Arial, sans-serif !default;
+//$font-family: "Roboto", "Helvetica Neue", Arial, sans-serif !default;
+$font-family: Arial, sans-serif !default;
 $default-font-size: 14px !default;
 $default-font-weight: 400 !default;										// 300, 400 or 700 as you wish
 $header-font-family: "Roboto", sans-serif;
@@ -75,9 +76,9 @@ $breadcrumbs-hover-color:		 ligthen( $breadcrumbs-tool-color, 5% ) !default;
 $link-color: $primary-color !default;
 $link-active-color: ligthen($primary-color, 5%);
 $link-hover-color: darken($primary-color, 5%);
-$link-background-color: transparent !default;
-$link-active-background-color: transparent !default;
-$link-hover-background-color: transparent !default;
+$link-background-color: #D0D0D0 !default;
+$link-active-background-color: #a0a0a0 !default;
+$link-hover-background-color: #a0a0a0 !default;
 
 /* Linknav button colors */
 $button-text-color:	 #424242 !default;
@@ -100,7 +101,7 @@ $warn-color:                darken($warn-background-color, 35%) !default;
 $error-background-color:    #f2dede !default;
 $error-color:               darken($error-background-color, 30%) !default;
 
-$swapped-view-primary: 		 #bf360c !default;
+$swapped-view-primary: 		 #989898 !default;
 $swapped-view-text-color:	 #414141 !default;
 $swapped-view-sites-nav-background: $swapped-view-primary !default;
 
@@ -151,7 +152,7 @@ $hierarchy-size: 3.5em;
 $measure: 960px !default;
 
 /* Logo location */
-$logo: 'images/logo.jpg' !default;
+$logo: 'images/logo.png' !default;
 $logo-height: 40px !default;
 $logo-width:  40px !default;
 
@@ -163,4 +164,4 @@ $icon-size: 20px !default;
 $footer-background: transparent !default;
 $footer-color: $background-color-secondary !default;
 
-@import url(#{$font-family-url});
+//@import url(#{$font-family-url});
