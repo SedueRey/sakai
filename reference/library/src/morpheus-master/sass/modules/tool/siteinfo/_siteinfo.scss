@@ -17,6 +17,14 @@
 			}
 		}
 	}
+	
+	#credits,#id {
+		display: none;
+	}
+	
+	td[headers='credits'],td[headers='id'] {
+		display: none;
+	}
 }
 
 #toolSelectionList{
