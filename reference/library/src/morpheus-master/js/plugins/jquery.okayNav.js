@@ -95,8 +95,8 @@
                     .append('<a href="#" class="' + self.options.toggle_icon_class + ' okay-invisible">' + self.options.toggle_icon_content + '</a>')
             } else {
                 self.navigation
-                    .prepend('<ul class="okayNav__nav--invisible transition-enabled nav-left" />')
-                    .prepend('<a href="#" class="' + self.options.toggle_icon_class + ' okay-invisible">' + self.options.toggle_icon_content + '</a>')
+                    .append('<ul class="okayNav__nav--invisible transition-enabled nav-left" />')
+                    .append('<a href="#" class="' + self.options.toggle_icon_class + ' okay-invisible">' + self.options.toggle_icon_content + '</a>')
             }
 
             // Cache new elements for further use
@@ -463,5 +463,5 @@
 document.addEventListener("DOMContentLoaded", function(event) {
 	$PBJQ('#topnav_container').addClass('okayNav');
 	$PBJQ('#topnav_container').show();
-	var navigation = $PBJQ('#topnav_container').okayNav({notMoveClass:'is-selected',resize_delay:2000,swipe_enabled:false,mediaQuery:800});
+	var navigation = $PBJQ('#topnav_container').okayNav({notMoveClass:'is-selected',resize_delay:2000,swipe_enabled:false,mediaQuery:800,align_right:false});
 });
