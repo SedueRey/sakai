@@ -292,7 +292,6 @@ body.is-logged-out{
 
 		&:hover{
 			color: $topNav-text-color;
-			text-decoration: underline;
 		}
 		
 		&.has-avatar:hover .#{$namespace}userNav__submenuitem--profilepicture,
