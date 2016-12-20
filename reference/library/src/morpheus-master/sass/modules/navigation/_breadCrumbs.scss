@@ -1,6 +1,7 @@
 .#{$namespace}siteHierarchy{
 	$svg-gradient-shim-threshold: 1 !global;
-	background: linear-gradient( to right, $header-gradient-a, $header-gradient-b, $header-gradient-c, $header-gradient-d);
+	//background: linear-gradient( to right, $header-gradient-a, $header-gradient-b, $header-gradient-c, $header-gradient-d);
+	background: #efefef;
 	box-shadow: inset 0px -1px 5px rgba(0,0,0,0.1);
 	min-height: $hierarchy-size;
 
@@ -34,8 +35,8 @@
 		}
 
 		.#{$namespace}hierarchy--siteName a:hover{
-			color: $breadcrumbs-hover-color;
-			border-bottom: 1px solid $breadcrumbs-hover-color;
+			color: #B01A1A;
+			//border-bottom: 1px solid $breadcrumbs-hover-color;
 		}
 
 		/*
@@ -49,12 +50,11 @@
 		}
 
 		a.#{$namespace}hierarchy--toolName{
-			color: $breadcrumbs-tool-color;
-			text-transform: uppercase;
-			font-size: 110%;
+			color: #B01A1A;
 			font-weight: bold;
+			letter-spacing: 1px;
 			margin-left: 0;
-
+			text-transform: uppercase;
 			.#{$namespace}breadcrumb--reset-icon{
 				display: none;
 			}
@@ -88,7 +88,7 @@
 		background-image: none;
 		color: $background-color;
 		position: fixed;
-		top: 6.3em;
+		top: 5.5em;
 		width: 100%;
 		z-index: 2;
 		@include transition( top 0.25s linear 0s );

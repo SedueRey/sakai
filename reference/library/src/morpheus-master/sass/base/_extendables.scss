@@ -33,10 +33,10 @@
 
 @mixin bs-callout($color, $bgcolor) {
   display: block;
-  margin: 20px 0;
-  padding: 15px 30px 15px 15px;
+  margin: 15px 0 5px 0;
+  padding: 5px 10px 5px 5px;
   border: 1px solid;
-  border-left-width: 5px;
+  border-left-width: 2px;
   border-color: lighten($color, 25%);
   border-left-color: $color;
   color: darken($color, 30%);
@@ -54,17 +54,17 @@
 }
 
 .bs-callout-primary, .bs-callout-info, .messageInformation, .messageInstruction, .messageProgress {
-  @include bs-callout($info-color, $info-background-color);
+  @include bs-callout(#259bcd, lighten(#259bcd, 45%));
 }
 
 .bs-callout-success, .messageValidation, .messageSuccess {
-  @include bs-callout($ok-color, $ok-background-color);
+  @include bs-callout($ok-color, lighten($ok-color, 45%));
 }
 .bs-callout-warn, .bs-callout-alert, .messageWarning, .messageConfirmation {
-  @include bs-callout($warn-color, $warn-background-color);
+  @include bs-callout( $warn-color, $warn-background-color );
 }
 .bs-callout-danger, .bs-callout-error, .messageError {
-  @include bs-callout($error-color, $error-background-color);
+  @include bs-callout(darken($error-color, 30%), $error-color );
 }
 
 @mixin icon( $width : $icon-size, $height : $icon-size ){
@@ -90,7 +90,7 @@
 }
 
 .select{
-	background-color: $button-background-color;
+	background-color: $button-background-secondary-color;
 	background-image: url("images/icon-arrow-down.png");
 	background-position: right 50%;
 	background-repeat: no-repeat;
@@ -98,7 +98,8 @@
 	color: $text-color;
 	font-family: $font-family;
 	font-size: #{$default-font-size - 1};
-	padding: 0.3em 2.2em 0.3em 0.5em;
+	line-height: 1.15;
+	padding: 0.5em 2.2em 0.5em 0.5em;
 	text-align: left;
 	max-width: 100%;
 	@include appearance(none);
@@ -113,14 +114,14 @@
 	> li{
 		&.active, &.selected, &.activeTab{
 			> a{
-				background: $tool-tab-active-background-color;
+				background: $background-color;
 				border-top: 1px solid #ddd;
 				border-left: 1px solid #ddd;
 				border-right: 1px solid #ddd;
-				border-bottom: 1px solid $tool-tab-active-background-color !important;
+				border-bottom: 1px solid $background-color !important;
 				color: $primary-color;
 				&:hover{
-					background: $tool-tab-active-border-color;
+					background: $tool-tab-background-color;
 					color: $primary-color;
 				}
 			}
@@ -137,23 +138,23 @@
 }
 
 @mixin sakai_button( $button-background-color, $button-border-color, $button-text-color, $button-background-secondary-color ){
-	background: $button-background-color;
+	background: linear-gradient( $button-background-secondary-color, $button-background-color );
 	border: 1px solid $button-border-color;
 	color: $button-text-color !important;
 	cursor: pointer;
 	display: inline-block;
-	font-family: $font-family;
-	font-size: #{ $default-font-size - 2 };
+	font-family: $header-font-family;
+	font-size: #{ $default-font-size - 3 };
 	letter-spacing: 0.8px;
-	line-height: 18px;
-	margin: 0.5em 0.8em 0.5em 0;
-	padding: 0.4em 0.8em 0.45em 0.8em;
+	line-height: 1;
+	margin: 0.5em 0.2em 0.5em 0;
+	padding: 0.7em 0.8em 0.7em 0.8em;
 	text-decoration: none !important;
 	@include appearance(none);
 	@include border-radius(3px);
 	&:hover{
+		background: $button-background-color;
 		text-decoration: none;
-		background: linear-gradient( $button-background-secondary-color, $button-background-color );
 	}
 	&:active{
 		outline: 0;
@@ -303,6 +304,10 @@ label.panelGridLabel{
 		border-color: lighten( $tool-menu-color, 5% ) !important;
 		background-color: lighten( $tool-menu-background-color, 5% ) !important;
 	}
+	
+	.dz-progress{
+		top: 70% !important;
+	}
 }
 
 .dropzone .dz-message .note {
@@ -310,6 +315,23 @@ label.panelGridLabel{
 	font-weight: 200;
 	display: block;
 	margin-top: 1.4rem;
+}
+
+body.inside-iframe {
+	.table-responsive {
+		overflow: visible;
+		max-width: 100%;
+		.table {
+			font-size: 13px !important;
+			h4 {
+				font-weight: 400;
+				font-size: 14px !important;
+			}
+			td,th {
+				white-space: normal !important;
+			}
+		}
+	}
 }
 
 @mixin flex-wrap($p: nowrap)

@@ -23,7 +23,7 @@
 
 .#{$namespace}toolTitleNav{
 	margin: 1em 0 0 0;
-	padding: 0.5em;
+	padding: 0.5em 0.8em 0.5em 1em;
 	position: relative;
 	.#{$namespace}toolTitleNav__title{
 		display: none;
@@ -79,7 +79,7 @@
 		}
 	}
 	.#{$namespace}toolTitleNav__link{
-		//color: lighten( $text-color, 70% );
+		color: #259bcd;
 		border: 1px solid #e0e0e0;
 		background: $tool-tab-background-color;
 		margin-right: 0.25em;
@@ -88,13 +88,14 @@
 		vertical-align: 0%;
 		&:hover{
 			background: $tool-background-color;
-			color: $primary-color;
+			color: lighten(#259bcd, 5%);
 			box-shadow: 0 0 6px 0 rgba(0,0,0,.15);
+			text-decoration :none;
 		}
 		@media #{$tablet}{
-			background: $tool-background-color;
-			border: 0px none;
-			color: $primary-color;
+			//background: $tool-background-color;
+			//border: 1px solid #259bcd;
+			//color: $primary-color;
 			margin-right: 0em;
 		}
 		/*@media #{$tablet}{
@@ -126,8 +127,8 @@
 			@extend .fa;
 			@extend .fa-share;
 			//@extend .fa-lg;	
-			display: none;
-			font-size: 0.9em;
+			//display: none;
+			font-size: 0.8em;
 			float: left;
 		}
 		.#{$namespace}itemTitle{

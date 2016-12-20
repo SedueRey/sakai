@@ -88,6 +88,28 @@
 	.icon-sakai-delete{                     @extend .fa-times;}
 	.icon-sakai-pdf{                        @extend .fa-file-pdf-o;}
 	.icon-sakai-clip{                       @extend .fa-paperclip;}
-	.icon-sakai-check{                      @extend .fa-check;}
+	.icon-sakai-check{                      @extend .fa-check;}	
+	.icon-sakai-privacy{					@extend .fa-user-secret;}
+	// icons for UM Tools
+	.icon-sakai-umugdocente, .icon-sakai-umugdocentevalida{ @extend .fa-map-o; }
+	.icon-sakai-umumakesites{ @extend .fa-plus-square; }
+	.icon-sakai-umuactas{ @extend .fa-file-excel-o; }
+	.icon-sakai-umullamamientos{ @extend .fa-bullhorn; }
+	.icon-sakai-synoptic-announcement{ @extend .fa-university; } 
+	.icon-sakai-synoptic-messagecenter{ @extend .fa-university; }
+	.icon-sakai-summary-calendar{ @extend .fa-university; }
+	.icon-sakai-umutf{ @extend .fa-briefcase; }
+	.icon-sakai-umusolicitudes{ @extend .fa-map-marker; }
+	.icon-sakai-umualumnado{ @extend .fa-users; }
+	.icon-sakai-umuinnova{ @extend .fa-gear; }
+	.icon-sakai-umuaddusers, .icon-sakai-umuadduser{ @extend .fa-user-plus; }
+	.icon-sakai-umusync{ @extend .fa-gear; }
+	.icon-sakai-umugdocentepub{ @extend .fa-file-o; }
+	.icon-sakai-umucorrige{ @extend .fa-list; }
+	.icon-sakai-gradebook-gwt-rpc{ @extend .fa-book}
+	// Contrib tools
+	.icon-sakai-clog{ @extend .fa-sticky-note-o; }
+	.icon-sakai-videoconference-connect{ @extend .fa-video-camera; }
+	.icon-sakai-presence{ @extend .fa-users; }
 	.icon-sakai-rsf-evaluation{             @extend .fa-commenting;}
 }

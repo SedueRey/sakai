@@ -440,7 +440,7 @@ $nav-tabs-link-hover-border-color:          darken( $tool-border-color, 10% );
 
 $nav-tabs-active-link-hover-bg:             darken( $tool-tab-background-color, 10% );
 $nav-tabs-active-link-hover-color:          $primary-color;
-$nav-tabs-active-link-hover-border-color:   $tool-tab-background-color;
+$nav-tabs-active-link-hover-border-color:   $tool-tab-active-background-color;
 
 // $nav-tabs-justified-link-border-color:            #ddd
 // $nav-tabs-justified-active-link-border-color:     $body-bg
