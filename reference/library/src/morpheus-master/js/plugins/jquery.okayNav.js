@@ -460,8 +460,8 @@
     };
 }));
 
-document.addEventListener("DOMContentLoaded", function(event) {
+/*document.addEventListener("DOMContentLoaded", function(event) {
 	$PBJQ('#topnav_container').addClass('okayNav');
 	$PBJQ('#topnav_container').show();
 	var navigation = $PBJQ('#topnav_container').okayNav({notMoveClass:'is-selected',resize_delay:2000,swipe_enabled:false,mediaQuery:800,align_right:false});
-});
+});*/
