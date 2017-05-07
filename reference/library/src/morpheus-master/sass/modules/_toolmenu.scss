@@ -253,9 +253,10 @@ nav#subSites{
 					color: $tool-menu-hover-color;
 				}
 				@media #{$phone}{
-					height:  5.5em;
+					min-height:  1em;
 					overflow: hidden;
-					padding: 0.85em 0.25em 0.1em;
+					padding: 0.85em;
+					text-align: left;
 				}
 				.#{$namespace}toolsNav__menuitem--title{
 					display: block;

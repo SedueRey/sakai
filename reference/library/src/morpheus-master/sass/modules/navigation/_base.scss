@@ -27,7 +27,7 @@ body.is-logged-out{
 		@include flex-shrink( 0 );
 		@include transition( width 0.5s linear 0s );
 		.#{$namespace}headerLogo--institution{
-			background: url($logo) no-repeat center center;
+			background: url($logo) no-repeat left center;
 			width: 		$logo-width;
 			height: 	$logo-height;
 			display:	inline-block;
@@ -140,7 +140,7 @@ body.is-logged-out{
 	}
 	.#{$namespace}userNav__submenuitem--fullname-and-id{
 		padding-top: 1em;
-		color: $text-color;
+		color: $tool-menu-background-color;
 		display: inline-block;
 		margin-bottom: 5px;
 		width: 10em;
@@ -160,9 +160,10 @@ body.is-logged-out{
 
 	}
 	.#{$namespace}userData{
-		border-bottom: 1px solid $tool-border-color;
+		border-bottom: 1px solid lighten($upv_blue1, 15% );
+		color: lighten($upv_blue2, 25%);
 		margin-bottom: 0.5em;
-		background-color: $tool-menu-background-color;
+		background-color: $upv_blue1;
 	}
 
 	.#{$namespace}userNav__submenuitem--profile-and-image{
@@ -186,7 +187,7 @@ body.is-logged-out{
 .#{$namespace}topHeader{
 	background: $top-header-background;
 	color: $background-color;
-	font-size: 1em;
+	font-size: 0.9em;
 	min-height: $header-size;
 	width: 100%;
 	@include display-flex(inline-flex);
@@ -461,7 +462,7 @@ body.is-logged-out{
 				position: absolute;
 				pointer-events: none;
 				border-color: transparent;
-				border-bottom-color: $tool-menu-background-color;
+				border-bottom-color: $upv_blue1;
 				border-width: 7px;
 				outline: 0;
 				@media #{$phone}{
@@ -598,7 +599,7 @@ body.is-logged-out{
 			position: relative;
 			
 			> .link-container{
-				padding: 0.5em 36px 0.5em 0.5em;
+				padding: 0.75em 24px 0.75em 0.5em;
 				border-top: $sites-nav-menu-item-border-top; /* to balance bottom border for vertical centering */
 				border-right: $sites-nav-menu-item-border-right;
 				border-bottom: $sites-nav-menu-item-border-bottom; /* to pre-allocate space for dropdown top border needed for illusion */
@@ -697,14 +698,10 @@ body.is-logged-out{
 				a{
 					background: $sites-nav-menu-item-selected-background;
 					color: $sites-nav-menu-item-selected-color;
-					border-top: $sites-nav-menu-item-selected-border-top; /* to balance bottom border for vertical centering */
-					border-right: $sites-nav-menu-item-selected-border-right;
-					border-bottom: $sites-nav-menu-item-selected-border-bottom; /* to pre-allocate space for dropdown top border needed for illusion */
-					border-left: $sites-nav-menu-item-selected-border-left;
+					border: 1px solid $sites-nav-menu-item-selected-background; /* to balance bottom border for vertical centering */
 				}
 				ul{
-					background: $sites-nav-menu-item-selected-background;
-					
+					background: $sites-nav-menu-item-selected-background;		
 					a:hover, a:active
 					{
 						color: $sites-nav-menu-item-selected-color; /* to override default link hover color */

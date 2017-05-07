@@ -19,7 +19,7 @@
 	}
 	&footerApp{
 		&__presence, &__portalChat{
-		    background-color: $footerApp__chat__header__background;
+		    background-color: $upv_grey2;
 		    color: $footerApp__chat__header__color;
 		    float: left;
 		    text-align: left;
@@ -178,7 +178,10 @@
     				padding: 5px;
 				    vertical-align: middle;
 				    color: $footerApp__chat__header__color;
-				    background-color: $footerApp__chat__header__background;
+				    background-color: $upv_grey2;
+					.icon-sakai-close{
+						color: #FFF;
+					}
 			}
 			
 			&__container {
@@ -207,7 +210,7 @@
 				margin: 0px 0px 10px 0px
 			}
 			&__users {
-				border-top: solid 0.5em $footerApp__chat__header__background;
+				border-top: solid 0.5em $upv_grey2;
 			}
 			&__close{
 				float: right;

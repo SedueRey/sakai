@@ -1,6 +1,7 @@
 .#{$namespace}siteHierarchy{
 	$svg-gradient-shim-threshold: 1 !global;
-	background: linear-gradient( to right, $header-gradient-a, $header-gradient-b, $header-gradient-c, $header-gradient-d);
+	//background: linear-gradient( to right, $header-gradient-a, $header-gradient-b, $header-gradient-c, $header-gradient-d);
+	background: $tool-menu-background-color;
 	box-shadow: inset 0px -1px 5px rgba(0,0,0,0.1);
 	min-height: $hierarchy-size;
 
@@ -84,7 +85,7 @@
 
 	@media #{$phone}{
 		padding: 1em;
-		background-color: $primary-color;
+		background-color: $upv_grey;
 		background-image: none;
 		color: $background-color;
 		position: fixed;
