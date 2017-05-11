@@ -4,8 +4,10 @@
 UPV Colors
 */
 
-$upv_grey  : #5b6770; // Color del logo
-$upv_grey2 : #454d54;
+//$upv_grey  : #5b6770; // Color del logo
+$upv_grey  : #17486d; // Color del logo
+//$upv_grey2 : #454d54;
+$upv_grey2 : #2f618c;
 $upv_red   : #c12a26; //#e72621;
 $upv_black : #231f20;
 $upv_blue1 : #103b4d;
@@ -85,13 +87,13 @@ $top-header-background: $background-color-secondary !default;
 $sites-nav-background: $top-header-background !default;
 
 $breadcrumbs-color:			 $text-color !default;
-$breadcrumbs-tool-color:		 $upv_red !default;
+$breadcrumbs-tool-color:		 #b21c1c !default;
 $breadcrumbs-hover-color:		 darken( $upv_red, 10% ) !default;
 
 /* Link colors */
-$link-color: $upv_blue2 !default;
-$link-active-color: $upv_blue2 !default;
-$link-hover-color: darken($upv_blue2, 15%) !default;
+$link-color: #b21c1c !default;
+$link-active-color: darken(#b21c1c, 10%) !default;
+$link-hover-color: darken(#b21c1c, 15%) !default;
 $link-background-color: transparent !default;
 $link-active-background-color: transparent !default;
 $link-hover-background-color: transparent !default;

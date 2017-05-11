@@ -54,7 +54,7 @@
 }
 
 .bs-callout-primary, .bs-callout-info, .messageInformation, .messageInstruction, .messageProgress {
-  @include bs-callout($info-color, $info-background-color);
+  @include bs-callout(#27ce7a, rgba(177, 223, 100, 0.26));
 }
 
 .bs-callout-success, .messageValidation, .messageSuccess {

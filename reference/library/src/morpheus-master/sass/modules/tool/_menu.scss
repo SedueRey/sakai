@@ -49,7 +49,7 @@
 }
 
 .instruction{
-	@include bs-callout($upv_blue1, rgba( lighten($upv_blue1, 45%), 0.26) );
+	@include bs-callout(#27ce7a, rgba(177, 223, 100, 0.26));
 }
 
 .listNav{
