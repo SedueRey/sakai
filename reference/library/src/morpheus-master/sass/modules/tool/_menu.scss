@@ -49,7 +49,7 @@
 }
 
 .instruction{
-	@include bs-callout(#27ce7a, rgba(177, 223, 100, 0.26));
+	@include bs-callout(#4fa9d0, lighten(#4fa9d0, 35%));
 }
 
 .listNav{

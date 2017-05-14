@@ -36,3 +36,12 @@ table{
 		}
 	}
 }
+
+table.table{
+	th{
+		color: $upv_red;
+		a[href] {
+			color: $upv_red;
+		}
+	}
+}

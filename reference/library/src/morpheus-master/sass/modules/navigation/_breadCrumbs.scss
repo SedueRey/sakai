@@ -24,7 +24,7 @@
 
 	/* Show the breadcrumbs on multiple rows (when there are parent sites), and use hover animations */
 	@media #{$nonPhone}{
-		background: $tool-menu-background-color url('images/poliformat-logo.png') no-repeat 17px center;
+		background: darken($tool-menu-background-color, 5% ) url('images/poliformat-logo.png') no-repeat 17px center;
 		min-height: initial;
 		padding: 0.75em 0 0.75em 7.8em;
 

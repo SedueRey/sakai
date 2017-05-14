@@ -137,9 +137,9 @@ $icon-font-path: if($bootstrap-sass-asset-helper, "bootstrap/", "../" + $skin-na
 //** Default background color used for all tables.
 // $table-bg:                      transparent
 //** Background color used for `.table-striped`.
-$table-bg-accent:               darken($tool-menu-background-color, 10%);
+//$table-bg-accent:               darken($tool-menu-background-color, 10%);
 //** Background color used for `.table-hover`.
-$table-bg-hover:                $tool-menu-background-color;
+//$table-bg-hover:                $tool-menu-background-color;
 // $table-bg-active:               $table-bg-hover
 
 //** Border color for table and cell borders.
@@ -874,7 +874,4 @@ $nav-tabs-active-link-hover-border-color:   $tool-tab-background-color;
 //** Horizontal line color.
 // $hr-border:                   $gray-lighter
 
-
-   @import "bootstrap";
-
-
+@import "D:/ev/p/sakai/node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
