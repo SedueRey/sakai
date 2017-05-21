@@ -17,15 +17,15 @@
 		display: inline-block;
 		margin: 0 0 0 0;
 		span{
-	 		@include sakai_button( $button-background-color, $button-border-color, $button-text-color, $button-background-secondary-color );
+	 		@include sakai_button( $button-background-color, $upv_red, $upv_red, $button-background-secondary-color );
 			&.current{
-	 			@include sakai_button_color( $button-color-background-color, $button-color-border-color, $button-color-text-color, $button-color-background-secondary-color );
+	 			@include sakai_button_color( $upv_red, $upv_red, $button-color-text-color, $upv_red );
 			}
 			&.inactive{
 				border-left: 0px none;
 			}
 			a{
-				color: $button-text-color;
+				color: $upv_red;
 				text-decoration: none;
 				&:hover{
 					text-decoration: none;
@@ -33,7 +33,7 @@
 			}
 		}
 		a{
-			color: $button-text-color;
+			color: $upv_red;
 			text-decoration: none;
 			&:hover{
 				text-decoration: none;

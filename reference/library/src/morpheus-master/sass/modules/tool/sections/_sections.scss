@@ -1,0 +1,10 @@
+.Mrphs-sakai-sections{
+    .sectionTable{
+        @extend .table;
+        @extend .table-bordered;
+        @extend .table-striped;
+        tr td {
+            border-color:$table-border-color !important;
+        }
+    }
+}

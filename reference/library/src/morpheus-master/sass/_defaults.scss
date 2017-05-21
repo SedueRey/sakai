@@ -16,6 +16,8 @@ $upv_brown  : #5f493e;
 $upv_green  : #a2b62d;
 
 
+// Cabecera de Foros es muy apagada d89914 #D9C9A7
+
 $namespace : "Mrphs-";
 $skin-name : "morpheus-default"; // This is used for bootstrap font behaviour.
 
@@ -39,7 +41,7 @@ $font-family-url: "//fonts.googleapis.com/css?family=Lato:400,700" !default;
 
 //Typography variables
 $font-family: 'Lato', Arial, sans-serif !default;
-$default-font-size: 15px !default;
+$default-font-size: 14px !default;
 $default-font-weight: 400 !default;										// 400 or 700 as you wish
 $header-font-family: $font-family;
 $header-font-weight: 700 !default;										// 400 or 700 as you wish
@@ -58,7 +60,7 @@ $text-color:				 $upv_black !default;
 $portal-background-color: $background-color !default;
 
 $tool-background-color:		 $background-color !default;
-$tool-menu-background-color:			 #f8f9f9 !default;
+$tool-menu-background-color:			 #eaeded !default;
 $tool-menu-color: 			 $upv_grey !default;
 $tool-tab-background-color: 			 #F8F8F8 !default;
 $tool-border-color:			 #E0E0E0 !default;
@@ -89,23 +91,23 @@ $breadcrumbs-tool-color:		 $upv_red !default;
 $breadcrumbs-hover-color:		 darken( $upv_red, 10% ) !default;
 
 /* Link colors */
-$link-color: $upv_blue2 !default;
+$link-color: #4071bf !default;
 $link-active-color: $upv_blue2 !default;
-$link-hover-color: darken($upv_blue2, 15%) !default;
+$link-hover-color: darken(#4071bf, 15%) !default;
 $link-background-color: transparent !default;
 $link-active-background-color: transparent !default;
 $link-hover-background-color: transparent !default;
 
 /* Linknav button colors */
-$button-text-color:	 #54a0a0 !default;
+$button-text-color:	 #4071bf !default;
 $button-border-color: $button-text-color !default;
 $button-background-color: #fbfbfd !default;
 $button-background-secondary-color: #FFF !default;
 /* General button colors */
 $button-color-text-color: #FFF !default;
-$button-color-border-color: $upv_red !default;
-$button-color-background-color: $upv_red !default;
-$button-color-background-secondary-color: $upv_red !default;
+$button-color-border-color: #4071bf !default;
+$button-color-background-color: #4071bf !default;
+$button-color-background-secondary-color: #4071bf !default;
 /* ///////////// */
 
 $info-color:                $primary-color  !default;

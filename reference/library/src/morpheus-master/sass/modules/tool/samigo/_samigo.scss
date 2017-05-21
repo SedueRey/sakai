@@ -1,4 +1,13 @@
 .#{$namespace}sakai-samigo{
+	//#4071bf
+	.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active {
+		border: 1px solid #4071bf !important;
+		background: #4071bf !important;
+		a[href]:hover{
+			color: #F0F0F0;
+			text-decoration: underline;
+		}
+	}
 	.samigo-inline-form {
 		td {
 			label{
@@ -9,9 +18,19 @@
 	}
 
 	#samigo-create-new-box, #samigo-create-import-box {
-		@extend .bs-callout-primary;
+		background-color: $table-bg-accent;
+		border: 1px solid $table-border-color;
 		border-left-width: 1px;
-		margin-top: 0;
+		margin: 2rem 2%;
+    	padding: 1.4rem;
+    	width: 46%;
+	}
+
+	#samigo-create-or-box{
+		text-align: center;
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
 	}
 
 	.samigo-question-callout {
