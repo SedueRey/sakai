@@ -1,8 +1,8 @@
 .#{$namespace}sakai-samigo{
-	//#4071bf
+	//$link-color
 	.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active {
-		border: 1px solid #4071bf !important;
-		background: #4071bf !important;
+		border: 1px solid $link-color !important;
+		background: $link-color !important;
 		a[href]:hover{
 			color: #F0F0F0;
 			text-decoration: underline;

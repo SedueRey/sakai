@@ -79,8 +79,8 @@
 		}
 	}
 	.#{$namespace}toolTitleNav__link{
-		color: #4071bf;
-		border: 1px solid darken(#4071bf,10%);
+		color: $link-color;
+		border: 1px solid darken($link-color,10%);
 		background: $tool-tab-background-color;
 		margin-right: 0.25em;
 		padding: 5px 8px;

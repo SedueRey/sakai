@@ -93,21 +93,21 @@ $breadcrumbs-hover-color:		 darken( $upv_red, 10% ) !default;
 /* Link colors */
 $link-color: #4071bf !default;
 $link-active-color: $upv_blue2 !default;
-$link-hover-color: darken(#4071bf, 15%) !default;
+$link-hover-color: darken($link-color, 15%) !default;
 $link-background-color: transparent !default;
 $link-active-background-color: transparent !default;
 $link-hover-background-color: transparent !default;
 
 /* Linknav button colors */
-$button-text-color:	 #4071bf !default;
+$button-text-color:	 $link-color !default;
 $button-border-color: $button-text-color !default;
 $button-background-color: #fbfbfd !default;
 $button-background-secondary-color: #FFF !default;
 /* General button colors */
 $button-color-text-color: #FFF !default;
-$button-color-border-color: #4071bf !default;
-$button-color-background-color: #4071bf !default;
-$button-color-background-secondary-color: #4071bf !default;
+$button-color-border-color: $link-color !default;
+$button-color-background-color: $link-color !default;
+$button-color-background-secondary-color: $link-color !default;
 /* ///////////// */
 
 $info-color:                $primary-color  !default;
