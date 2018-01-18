@@ -10,8 +10,15 @@ var setupSkipNav = function(){
    });
 };
 
-$PBJQ( document ).ready(function() {
-	
+document.addEventListener("DOMContentLoaded", function(event) {
+	var isWorkspaceHome = ( document.getElementsByClassName('workspace').length > 0 
+						 && document.getElementsByClassName('Mrphs-multipleTools').length > 0 );
+	if( isWorkspaceHome ) {
+		document.body.classList.add('js-home-workspace');
+	}
+});
+
+$PBJQ( document ).ready(function() {	
 	var lastScrollTop = 0;
 
 	$PBJQ(document).scroll(function(event){

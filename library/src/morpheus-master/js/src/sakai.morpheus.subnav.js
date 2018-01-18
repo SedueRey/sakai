@@ -156,13 +156,14 @@ var setupSiteNav = function(){
       }
 
       // Add an invisible overlay to allow clicks to close the dropdown
-      var overlay = $PBJQ('<div class="sitenav-dropdown-overlay" />');
+      /*var overlay = $PBJQ('<div class="sitenav-dropdown-overlay" />');
+      overlay.css('left', $PBJQ('#Mrphs-sites-nav').width() + 'px');
 
       overlay.on('click', function (e) {
         closeAllDropdownMenus();
       });
 
-      $PBJQ('body').prepend(overlay);
+      $PBJQ('body').prepend(overlay);*/
 
       dropdownArrow.removeData('clicked');
     };
