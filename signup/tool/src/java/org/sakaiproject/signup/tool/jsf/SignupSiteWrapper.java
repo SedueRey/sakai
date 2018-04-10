@@ -19,8 +19,10 @@
 
 package org.sakaiproject.signup.tool.jsf;
 
+import java.util.Comparator;
 import java.util.List;
 
+import org.sakaiproject.signup.model.SignupGroup;
 import org.sakaiproject.signup.model.SignupSite;
 
 /**
@@ -115,7 +117,8 @@ public class SignupSiteWrapper {
 	 * @return a list of SignupGroupWrapper objects.
 	 */
 	public List<SignupGroupWrapper> getSignupGroupWrappers() {
-		return signupGroupWrappers;
+		this.signupGroupWrappers.sort((SignupGroupWrapper x, SignupGroupWrapper y) -> x.getSignupGroup().getTitle().compareTo(y.getSignupGroup().getTitle()));
+		return this.signupGroupWrappers;
 	}
 
 }
