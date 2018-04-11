@@ -8,5 +8,11 @@
        <property name="preferencesService" ref="org.sakaiproject.user.api.PreferencesService" />
        <property name="sessionManager" ref="org.sakaiproject.tool.api.SessionManager" />
     </bean>
-
+    
+	<bean id="UserPrefsTool"
+	 	  parent="org.sakaiproject.entitybroker.entityprovider.AbstractEntityProvider" 
+	      class="org.sakaiproject.user.tool.UserPrefsTool" init-method="initIt">
+		  <property name="eventTrackingService"><ref bean="org.sakaiproject.event.api.EventTrackingService"/></property>
+		  <property name="message" value="i'm property message" />
+	</bean>
 </beans>

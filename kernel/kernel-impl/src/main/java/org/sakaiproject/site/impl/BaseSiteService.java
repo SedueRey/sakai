@@ -92,6 +92,7 @@ public abstract class BaseSiteService implements SiteService, Observer
 	private static final String RESOURCECLASS = "resource.class.siteimpl";
 	private static final String RESOURCEBUNDLE = "resource.bundle.siteimpl";
 	private static final String ORIGINAL_SITE_ID_PROPERTY = "original-site-id";
+	private static final String PREFS_HIDE_SITE_EVENT = "prefs.hide.sites";
 
 	private ResourceLoader rb = null;
 	// protected ResourceLoader rb = new ResourceLoader("site-impl");
@@ -3588,6 +3589,8 @@ public abstract class BaseSiteService implements SiteService, Observer
 		// site from the user cache, so having his/her cache persist for the TTL is not problematic.
 
 		String eventType = event.getEvent();
+		
+		log.info("3593 : Getting event " + eventType);
 
 		if (EVENT_SITE_USER_INVALIDATE.equals(eventType))
 		{
@@ -3612,6 +3615,9 @@ public abstract class BaseSiteService implements SiteService, Observer
 				|| SiteService.SECURE_UPDATE_SITE.equals(eventType))
 		{
 			notifySiteParticipant("/gradebook/" + event.getContext() + "/");
+		}
+		else if (PREFS_HIDE_SITE_EVENT.equals(eventType)) {
+			clearUserCacheForUser(event.getUserId());
 		}
 	}
 	protected Storage storage() {

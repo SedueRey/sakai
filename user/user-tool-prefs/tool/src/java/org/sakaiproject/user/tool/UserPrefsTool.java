@@ -40,15 +40,15 @@ import javax.faces.context.FacesContext;
 import javax.faces.event.ValueChangeEvent;
 import javax.faces.model.SelectItem;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.math.NumberUtils;
 import org.sakaiproject.component.cover.ComponentManager;
 import org.sakaiproject.component.cover.ServerConfigurationService;
 import org.sakaiproject.entity.api.ResourceProperties;
 import org.sakaiproject.entity.api.ResourcePropertiesEdit;
+import org.sakaiproject.entitybroker.entityprovider.CoreEntityProvider;
+import org.sakaiproject.entitybroker.util.AbstractEntityProvider;
+import org.sakaiproject.event.api.EventTrackingService;
 import org.sakaiproject.event.cover.NotificationService;
 import org.sakaiproject.exception.IdUnusedException;
 import org.sakaiproject.portal.util.PortalUtils;
@@ -68,11 +68,15 @@ import org.sakaiproject.util.FormattedText;
 import org.sakaiproject.util.ResourceLoader;
 import org.sakaiproject.util.Web;
 
+import lombok.Getter;
+import lombok.Setter;
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * UserPrefsTool is the Sakai end-user tool to view and edit one's preferences.
  */
 @Slf4j
-public class UserPrefsTool
+public class UserPrefsTool extends AbstractEntityProvider implements CoreEntityProvider
 {
 
 	/** * Resource bundle messages */
@@ -87,6 +91,17 @@ public class UserPrefsTool
 	public static final String PREFS_EXPAND = "prefs.expand";
 	private static final String PREFS_EXPAND_TRUE = "1";
 	private static final String PREFS_EXPAND_FALSE = "0";
+	
+	@Setter EventTrackingService eventTrackingService;
+	@Setter String message;
+
+	private static final String PREFS_HIDE_SITE_EVENT = "prefs.hide.sites";
+	
+	public static String PREFIX = "userPrefsTool";
+	
+	public void initIt() throws Exception {
+	  log.debug("Init method after properties are set : " + message);
+	}
 
 	/**
 	 * Represents a name value pair in a keyed preferences set.
@@ -714,6 +729,7 @@ public class UserPrefsTool
 		}
 
 		initNotificationStructures();
+		// this.eventTrackingService = new ();
 		log.debug("new UserPrefsTool()");
 	}
 	
@@ -2286,6 +2302,9 @@ public class UserPrefsTool
 			hiddenUpdated = true;
 
 			m_reloadTop = Boolean.TRUE;
+			
+			eventTrackingService.post(eventTrackingService.newEvent(this.PREFS_HIDE_SITE_EVENT, this.userId, true));
+			log.info("2297 : Sending event " + PREFS_HIDE_SITE_EVENT +  " with userId" + this.userId);
 		}
 
 		return "hidden";
@@ -2740,6 +2759,17 @@ public class UserPrefsTool
 	 */
 	public String getServiceName() {
 		return ServerConfigurationService.getString("ui.name", "Sakai");
+	}
+
+	@Override
+	public String getEntityPrefix() {
+		return this.PREFIX;
+	}
+
+	@Override
+	public boolean entityExists(String id) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 	
 }
