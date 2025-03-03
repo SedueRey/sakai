@@ -17,6 +17,7 @@ sakai-course-card {
     background-size: cover;
     background-position: center;
     color: var(--sakai-text-color-inverse, white);
+
     @extend .fw-bold;
     @extend .rounded-top;
     @extend .p-4;
@@ -49,6 +50,7 @@ sakai-course-card {
     border-color: var(--sakai-border-color);
     color: var(--sakai-text-color-1);
     background-color: var(--sakai-background-color-3);
+
     @extend .d-flex;
     @extend .align-items-center;
     @extend .rounded-bottom;
@@ -57,6 +59,7 @@ sakai-course-card {
     .portal-notifications-indicator {
       top: 2px;
       right: 2%;
+
       @extend .p-1;
       @extend .rounded-circle;
     }
