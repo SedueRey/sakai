@@ -1,4 +1,5 @@
 /* Light Theme */
+@import "../defaults";
 
 :root{
     /////////////////////////////////////////////////////////////
@@ -29,9 +30,13 @@
     // predefined with gray, blue, teal, gold, green, orange,
     // purple, and red palettes available for you to use.
     // More info about defineColorHSL in sass/themes/_base.scss
-    @include defineColorHSL(--sakai-brand, 203, 76%, 25%);
+    @include defineColorHSL(--sakai-brand, 192, 100%, 7.8%);
+    --color-um-pantone-309C: hsla(192, 100%, 7.8%, 1);
+    --warm-red-c: hsla(8, 75.3%, 50.8%, 1);
+    --warm-gray-1c: hsla(36, 21.7%, 91.0%, 1);
+    --pantone-metalico: hsla(206, 3.0%, 56.0%, 1);
     /////////////////////////////////////////////////////////////
-
+    
     /////////////////////////////////////////////////////////////
     // Main theme definition
     // Start by defining the variables below to create
@@ -40,9 +45,13 @@
     /////////////////////////////////////////////////////////////
 
     // Logo
-    --logo: url(./images/sakaiLogoBlack.png);
-    --logo-height: 30px;
-    --logo-width: 103px;
+    // --logo: url(./images/sakaiLogoBlack.png);
+    --logo: url(./images/LogosimboloUMU-white.png);
+    @media #{$phone}{
+        --logo: url(./images/SelloUMU-white.png);
+    }
+    --logo-height: 45px;
+    --logo-width: 126px;
     --logo-opacity: 1;
     --logo-background-color: var(--sakai-primary-color-1);
 
@@ -204,19 +213,19 @@
     --tool-menu-color: var(--sakai-text-color-1);
     --tool-border-color: var(--sakai-border-color);
     --tool-tab-text-color: var(--tool-menu-color);
-    --tool-tab-background-color: var(--sakai-passive-color-1);
-    --tool-tab-border-color: var(--sakai-border-color);
+    --tool-tab-background-color: var(--sakai-color-gray--lighter-7);
+    --tool-tab-border-color: var(--sakai-brand);
     --tool-tab-hover-text-color: var(--sakai-text-color-3);
     --tool-tab-hover-background-color: var(--sakai-passive-color-2);
     --tool-tab-hover-highlight-color: var(--sakai-active-color-2);
-    --tool-tab-active-text-color: var(--sakai-text-color-3);
-    --tool-tab-active-background-color: var(--sakai-background-color-1);
+    --tool-tab-active-text-color: var(--sakai-selected-page-color);
+    --tool-tab-active-background-color: var(--sakai-brand);
     --tool-tab-active-highlight-color:var(--sakai-active-color-3);
 
-    --top-header-background: var(--sakai-background-color-1);
+    --top-header-background: var(--color-um-pantone-309C);
     --top-header-background-logo: var(--top-header-background);
-    --top-header-border-color: transparent;
-    --top-header-text-color: var(--sakai-text-color-1);
+    --top-header-border-color: var(--warm-red-c);
+    --top-header-text-color: var(--sakai-text-color-inverted);
     --top-header-profile-border-color-top: var(--sakai-secondary-color-1);
     --top-header-profile-border-color-right: var(--sakai-secondary-color-1);
     --top-header-profile-border-color-bottom: var(--sakai-tertiary-color-1);
@@ -225,9 +234,9 @@
 
     --sites-nav-background: var(--sakai-background-color-1);
 
-    --breadcrumbs-color: var(--sakai-text-color-1);
-    --breadcrumbs-tool-color: var(--sakai-primary-color-1);
-    --breadcrumbs-hover-color: var(--sakai-primary-color-1);
+    --breadcrumbs-color: var(--sakai-text-color-inverted);
+    --breadcrumbs-tool-color: var(--sakai-text-color-inverted);
+    --breadcrumbs-hover-color: var(--sakai-text-color-inverted);
 
     /* Link colors */
     --link-color: var(--sakai-primary-color-1);
@@ -239,9 +248,9 @@
     --link-hover-background-color: transparent;
 
     // Default (non-primary) button design:
-    --button-text-color: var(--sakai-text-color-2);
-    --button-background: var(--sakai-passive-color-1);
-    --button-border-color: var(--sakai-passive-color-2);
+    --button-text-color: var(--sakai-text-color);
+    --button-background: transparent;
+    --button-border-color: var(--sakai-brand);
     --button-shadow: none;
     // hover and focus states:
     --button-hover-text-color: var(--button-text-color);
@@ -257,7 +266,7 @@
     // disabled state:
     --button-disabled-text-color: var(--sakai-text-color-disabled);
     --button-disabled-background: var(--sakai-background-color-2);
-    --button-disabled-border-color: var(--sakai-border-color);
+    --button-disabled-border-color: var(--bs-body-color);
     --button-disabled-shadow: none;
 
     // Primary action button design:
@@ -300,9 +309,9 @@
     --errorBanner-color: var(--sakai-color-red--darker-2);
 
     /* Swapped 'View As' view */
-    --swapped-view-primary: var(--warnBanner-bgcolor);
+    --swapped-view-primary: var(--warm-red-c);
     /* Admin Become User view */
-    --become-user-primary: var(--sakai-color-purple--darker-1);
+    --become-user-primary: var(--warm-red-c);
 
     --topNav-text-color: var(--sakai-text-color-inverted); // used for links and text in the topNav
     --topNav-border-color: var(--sakai-border-color); // used for topNav spacers
@@ -375,12 +384,12 @@
     --site-nav-btn-hover-border-color: var(--site-nav-btn-hover-bg);
     --site-nav-btn-focus-shadow-rgb: 249, 250, 251;
     --site-nav-btn-active-color: var(--site-nav-btn-color);
-    --site-nav-btn-active-bg: var(--sakai-brand--lighter-5);
-    --site-nav-btn-active-border-color: var(--site-nav-btn-border-color);
+    --site-nav-btn-active-bg: #0f657b;
+    --site-nav-btn-active-border-color: #0f657b;
     //--site-nav-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-    --site-nav-btn-disabled-color: var(--site-nav-btn-color);
-    --site-nav-btn-disabled-bg: var(--site-nav-btn-bg);
-    --site-nav-btn-disabled-border-color: var(--site-nav-btn-border-color);
+    --site-nav-btn-disabled-color: #6c757d;
+    --site-nav-btn-disabled-bg: transparent;
+    --site-nav-btn-disabled-border-color: #6c757d;
 
     --site-nav-btn-current-color: var(--button-text-color);
     --site-nav-btn-current-bg: transparent;
@@ -429,9 +438,9 @@
     --all-sites-button-star-full-color: var(--sakai-color-gold);
     --all-sites-button-star-empty-color: var(--sakai-text-color-1);
 
-    --all-sites-button-selected-text-color: var(--sakai-text-color-3);
-    --all-sites-button-selected-background-color: var(--sakai-active-color-1);
-    --all-sites-button-selected-border-color: var(--all-sites-button-selected-background-color);
+    --all-sites-button-selected-text-color: var(--sakai-text-color-inverted);
+    --all-sites-button-selected-background-color: var(--color-um-pantone-309C);
+    --all-sites-button-selected-border-color: var(--color-um-pantone-309C);
     --all-sites-button-selected-dropdown-color: var(--all-sites-button-selected-text-color);
     --all-sites-button-selected-star-full-color: var(--all-sites-button-star-full-color);
     --all-sites-button-selected-star-empty-color: var(--all-sites-button-star-empty-color);
@@ -630,15 +639,15 @@
     --sakai-pin-color: var(--sakai-text-color-2);
     --sakai-pin-hover-color: black;
 
-    --sakai-current-site: transparent;
+    --sakai-current-site: var(--tool-tab-background-color);
     --sakai-current-site-color: var(--sakai-text-color-2);
-    --sakai-curent-site-border-color: var(--sakai-brand);
+    --sakai-curent-site-border-color: var(--warm-red-c);
     --sakai-selected-page-bg-color: var(--sakai-brand);
     --sakai-selected-page-color: var(--sakai-text-color-inverted);
 
     --sticky-foooter-color: var(--sakai-brand--lighter-6);
     --sticky-foooter-color-hover: var(--sakai-brand--lighter-6);
-    --sticky-footer-bg: var(--site-nav-bg);
+    --sticky-footer-bg: var(--sakai-current-site);
 
     --sakai-thumbnail-background-color: var(--sakai-background-color-1);
     --sakai-thumbnail-border-color: var(--sakai-border-color);
@@ -646,6 +655,11 @@
     --sakai-scrollbar-background-color: var(--sakai-border-color);
     --sakai-scrollbar-thumb-color: var(--sakai-brand);
     --sakai-scrollbar-thumb-hover-color: var(--sakai-brand--lighter-3);
+
+    --portal-main-content-header-breadcrumb-bg: var(--sakai-color-gray--lighter-7);
+    --portal-main-content-header-breadcrumb-color: var(--sakai-text-color-1);
+    --tool-tab-active-color: var(--sakai-background-color-1);
+    --button-text-color: var(--sakai-text-color-1);
 }
 
 // Tables

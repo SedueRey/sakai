@@ -1,16 +1,20 @@
 @if $swapped-view-enabled {
 	.#{$namespace}portalWrapper{
 		&.swapped-view{
-			border-left: 7px solid var(--become-user-primary);
-			border-right: 7px solid var(--become-user-primary);
-			border-bottom: 7px solid var(--become-user-primary);
+			border-left: 1rem solid var(--become-user-primary);
+			border-right: 1rem solid var(--become-user-primary);
+			border-bottom: 1rem solid var(--become-user-primary);
 			.#{$namespace}topHeader, .#{$namespace}headerLogo {
 				background: var(--swapped-view-primary);
 			}
 		}
 	}
+	.Mrphs-portalBody.Mrphs-become-user-enabled .portal-header {
+		background-color: var(--warm-); // --top-header-background
+	}
 }
 
+/*
 // Admin Become User view
 body.Mrphs-become-user-enabled {
 	.#{$namespace}portalWrapper{
@@ -22,3 +26,4 @@ body.Mrphs-become-user-enabled {
 		background: var(--become-user-primary);
 	}
 }
+*/

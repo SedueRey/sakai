@@ -3,6 +3,10 @@
 	min-height: $hierarchy-size;
 	transition:var(--sak-theme-switch-ease);
 
+	.header-tool-title {
+		display: none;
+	}
+
 	h1{
 		color: var(--sakai-background-color-1);
 		font-weight: 300;

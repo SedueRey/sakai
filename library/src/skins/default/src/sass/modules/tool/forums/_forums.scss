@@ -21,6 +21,25 @@
 	.topicBlocLone{
 		@extend .bs-callout-info;
 	}
+	
+	.gradeSelector.itemAction {
+		position: relative;
+    top: -4px;
+		white-space: wrap;
+		select {
+			line-height: 1;
+		}
+		.instrWithGrades {
+			display: block;
+			margin: 1rem 0;
+		}
+	}
+
+	#revise\:createForumsForGroups {
+		input[type="radio"] {
+			margin: 0 1rem 0 0;
+		}
+ 	}
 
 	.permissionRow{
 		span.ui-accordion-header {

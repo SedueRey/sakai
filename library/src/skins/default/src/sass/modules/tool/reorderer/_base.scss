@@ -7,6 +7,8 @@
   padding: 5px;
   a {
     outline: none;
+    text-wrap: wrap;
+    line-height: 1.2;
   }
 }
 ul.styled-reorder-list {

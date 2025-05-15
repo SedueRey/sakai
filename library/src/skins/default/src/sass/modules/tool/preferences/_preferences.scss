@@ -1,5 +1,10 @@
 .#{$namespace}sakai-preferences {
 
+  .indnt2, .tier2 {
+    margin: 2rem 1rem 1rem 2rem;
+    display: block;
+  }
+
   .blocked {
     opacity: 0.2;
     filter: alpha( opacity = 20);
@@ -64,13 +69,7 @@
     padding:3px 5px;
     cursor: default;
     outline:none;
-    background-color: #fff;
-    &::after {
-      content: "\F46a"; /* bi-lock */
-      font-family: bootstrap-icons;
-      position: absolute;
-      right: 5px;
-    }
+    background: #fff url("/library/image/silk/lock.png")  99% 50% no-repeat;
   }
 
   /*
@@ -124,13 +123,7 @@
   }
 
   .layoutReorderer-dropMarker {
-    background-color: #9f9;
-    &::before {
-      content: "\F138"; /* bi-chevron-right */
-      font-family: bootstrap-icons;
-      position: absolute;
-      left: 5px;
-    }
+    background: #9f9 url("/library/image/silk/arrow_right.png")  1% 50% no-repeat;
     height: 20px;
     padding: 0 0 0 0;
     margin-left: 1em;

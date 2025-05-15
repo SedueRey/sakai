@@ -184,56 +184,11 @@ body.is-logged-out{
 #toolMenu .img_site_toolmenu{
   width: 100%;
   height: auto;
-  margin: 4px auto;
-  border-radius: 4px;
+	margin: 4px auto;
+	border-radius: 4px;
   @media #{$phone}{
     display: none;
   }
-}
-
-#toolMenuWrap{
-	#toolMenu {
-		position: relative;
-	}
-	background: var(--tool-menu-background-color);
-	display: block;
-	min-width: $tool-menu-width;
-	width: $tool-menu-width;
-	min-height: 100vh;											// alternative for browswers who cannot do calculations
-	min-height: calc(100vh - (#{$banner-height} * 2));	// viewport minus the two top banners
-	@include flex-basis( $tool-menu-width );
-	padding: $tool-menu-padding;
-	text-align: center;
-	border-right: 1px solid var(--tool-border-color);
-	@include transition( left 0.25s linear 0s );
-	
-	@media #{$phone}{
-		left: -100%;
-		position: absolute;
-		display: none;			// remove the height of the tool menu from the page to reduce the length of the page
-		padding: 0;
-		margin: 0;
-
-		@if $skin-with-icons {
-			.#{$namespace}toolsNav__menuitem--title{
-				display: none;
-			}
-		} @else {
-			.#{$namespace}toolsNav__menuitem--title{
-				display: inline-block;
-				width:   #{$icon-size - 5px };
-				height:  $icon-size;
-				letter-spacing: 2em;
-				padding: 0px 0 0 5px;
-				overflow: hidden;
-				@include border-radius( $icon-size );
-				box-shadow:  var(--elevation-4dp);
-			}
-		}
-	}
-	&.openedLinkNav{
-		margin: 0 0 0 0;
-	}
 }
 
 .#{$namespace}toolsNav__title--current-site{
@@ -318,6 +273,9 @@ nav#subSites{
 		
 		li{
 			border-bottom: 1px solid var(--tool-menu-item-separator-color);
+			max-width: 100%;
+			overflow: hidden;
+			white-space: nowrap;
 
 			&.#{$namespace}collapseTools
 			{
@@ -582,7 +540,7 @@ nav#subSites{
 					}
 
 					.#{$namespace}toolsNav__menuitem--title{
-						font-weight: 700;
+						font-weight: 600;
 					}
 
 					&:hover{

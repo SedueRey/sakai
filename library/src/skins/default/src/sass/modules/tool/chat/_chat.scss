@@ -34,6 +34,7 @@
 				display: none;
 				@media #{$tablet} {
 					display: block;
+					margin: 0 0 1rem 0;
 				}
 				@media #{$smallPhone} {
 					display: flex;
@@ -41,6 +42,9 @@
 				li {
 					a {
 						padding: 10px 9px;
+						@media #{$tablet} {
+							display: block;
+						}
 					}
 				}
 			}

@@ -30,7 +30,13 @@
     // predefined with gray, blue, teal, gold, green, orange,
     // purple, and red palettes available for you to use.
     // More info about defineColorHSL in sass/themes/_base.scss
-    @include defineColorHSL(--sakai-greyblue, 214, 12%, 57%);
+    @include defineColorHSL(--sakai-greyblue, 192, 100%, 7.8%);
+    @include defineColorHSL(--sakai-brand, 192, 100%, 7.8%);
+    --color-um-pantone-309C: hsla(192, 100%, 7.8%, 1);
+    --warm-red-c: hsla(8, 75.3%, 50.8%, 1);
+    --warm-gray-1c: hsla(36, 21.7%, 91.0%, 1);
+    --pantone-metalico: hsla(206, 3.0%, 56.0%, 1);
+    --secondary-color: hsl(220deg 12.41% 19.15%);
     /////////////////////////////////////////////////////////////
 
     /////////////////////////////////////////////////////////////
@@ -45,8 +51,13 @@
     // Here, we reduce the opacity of the default logo to make 
     // it fit in better with dark theme.
     // Suggested: decimal .7 and .9
-    --logo: url(./images/sakaiLogo.png);
-    --logo-opacity: .7;
+    --logo: url(./images/LogosimboloUMU-white.png);
+    @media #{$phone}{
+        --logo: url(./images/SelloUMU-white.png);
+    }
+    --logo-height: 45px;
+    --logo-width: 126px;
+    --logo-opacity: 1;
 
     .logo-light {
       display: none;
@@ -100,7 +111,7 @@
     // Primary background color. 
     // Suggested: very dark grey
     // Used on the body and main content containers
-    --sakai-background-color-1: var(--sakai-greyblue--darker-6);
+    --sakai-background-color-1: hsl(214, 15%, 8%);
 
     // Default: A slightly lighter shade of --sakai-background-color-1
     // Used in hover effects of --sakai-background-color-1, alternating table rows
@@ -238,9 +249,9 @@
     --jumbotron-bg: var(--sakai-color-blue--darker-5);
     --jumbotron-color: var(--sakai-text-color-1);
 
-    //--sakai-current-site: transparent;
-    //--sakai-current-site-color: var(--sakai-text-color-2);
-    --sakai-curent-site-border-color: var(--sakai-brand--lighter-3);
+    --sakai-current-site: hsl(220, 12%, 19%);
+    --sakai-current-site-color: var(--sakai-text-color-2);
+    --sakai-curent-site-border-color: var(--warm-red-c);
     //--sakai-selected-page-bg-color: var(--sakai-brand);
     //--sakai-selected-page-color: var(--sakai-text-color-inverted);
 
@@ -259,6 +270,21 @@
     //--sakai-scrollbar-background-color: var(--sakai-border-color);
     --sakai-scrollbar-thumb-color: var(--sakai-brand--lighter-7);
     //--sakai-scrollbar-thumb-hover-color: var(--sakai-brand--lighter-3);
+
+    --portal-main-content-header-breadcrumb-bg: var(--secondary-color);
+    --portal-main-content-header-breadcrumb-color: var(--sakai-text-coporquelor-1);
+    --tool-tab-background-color: var(--secondary-color);
+    --tool-tab-active-color: var(--sakai-background-color-1);
+    --button-text-color: var(--sakai-text-color-1);
+    
+    --elevation-1dp: 0 2px 1px -1px rgba(200,200,200,.2), 0 1px 1px 0 rgba(200,200,200,.14), 0 1px 3px 0 rgba(200,200,200,.12);
+    --elevation-2dp: 0 3px 1px -2px rgba(200,200,200,.2), 0 2px 2px 0 rgba(200,200,200,.14), 0 1px 5px 0 rgba(200,200,200,.12);
+    --elevation-3dp: 0 3px 3px -2px rgba(200,200,200,.2), 0 3px 4px 0 rgba(200,200,200,.14), 0 1px 8px 0 rgba(200,200,200,.12);
+    --elevation-4dp: 0 2px 4px -1px rgba(200,200,200,.2), 0 4px 5px 0 rgba(200,200,200,.14), 0 1px 10px 0 rgba(200,200,200,.12);
+    --elevation-5dp: 0 3px 5px -1px rgba(200,200,200,.2), 0 5px 8px 0 rgba(200,200,200,.14), 0 1px 14px 0 rgba(200,200,200,.12);
+    --elevation-6dp: 0 3px 5px -1px rgba(200,200,200,.2), 0 6px 10px 0 rgba(200,200,200,.14), 0 1px 18px 0 rgba(200,200,200,.12);
+    --elevation-7dp: 0 4px 5px -2px rgba(200,200,200,.2), 0 7px 10px 1px rgba(200,200,200,.14), 0 2px 16px 1px rgba(200,200,200,.12);
+    --elevation-8dp: 0 5px 5px -3px rgba(200,200,200,.2), 0 8px 10px 1px rgba(200,200,200,.14), 0 3px 14px 2px rgba(200,200,200,.12);
 
     .accordion-button::after {
       filter: invert(100%);
@@ -350,5 +376,15 @@
 
     .poweredby__image {
         filter: invert(1);
+    }
+
+    .#{$namespace}sakai-forums{
+      .forumHeader {
+        background: var(--sakai-background-color-7);
+      }
+    }
+
+    #clog-author-table tr:nth-child(even) {
+      background: var(--sakai-background-color-7);
     }
 }

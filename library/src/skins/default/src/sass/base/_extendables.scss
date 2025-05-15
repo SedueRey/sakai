@@ -692,9 +692,6 @@ div.wicket-modal div.w_blue a.w_close {
 	color: var(--sakai-brand);
 	background-color: var(--sakai-background-color-1);
 }
-.badge{
-	color: var(--sakai-text-color-inverted);
-}
 .text-success,
 .bg-success {
 	color: var(--successBanner-color);
@@ -710,8 +707,10 @@ div.wicket-modal div.w_blue a.w_close {
 }
 .text-warning,
 .bg-warning {
-	color: var(--warnBanner-color);
+	color: var(--warnBanner-color) !important;
 	background-color: var(--warnBanner-bgcolor) !important;
+	display: block;
+	padding: 0.25rem;
 }
 .text-danger,
 .bg-danger {

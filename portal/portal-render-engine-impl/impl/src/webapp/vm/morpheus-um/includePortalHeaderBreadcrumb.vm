@@ -1,3 +1,4 @@
+#if (${userIsLoggedIn})
 ## Sustituyo las migas de pan por las de 22, que funcionan
 <nav class="Mrphs-siteHierarchy">
     #if ($!siteParents)
@@ -50,4 +51,4 @@
         #end
     #end
 </nav>
-
+#end

@@ -173,6 +173,7 @@ $jumbotron-heading-font-size: $h4-font-size;
 @import "modules/tool/microsoft-admin/microsoft-admin";
 @import "modules/tool/microsoft-mediagallery/microsoft-mediagallery";
 @import "modules/tool/microsoft-collaborativedocuments/microsoft-collaborativedocuments";
+@import "modules/tool/sections/sections";
 
 @import "base/rtl";
 
@@ -201,7 +202,7 @@ $jumbotron-heading-font-size: $h4-font-size;
 @import "modules/tool/search/search";
 @import "modules/datatables/base";
 
-
+@import "umujsf2";
 
 
 //

@@ -58,7 +58,10 @@
   height: var(--portal-header-height);
   grid-area: header;
   background-color: var(--top-header-background);
-  border-bottom: 3px solid var(--sakai-border-color);
+  border-bottom: 0.75rem solid var(--top-header-border-color);
+  .#{$namespace}siteHierarchy {
+    display: none;
+  }
 }
 
 #loginForm input,
@@ -68,17 +71,44 @@
   color: var(--top-header-text-color);
 }
 
-@include media-breakpoint-up(md) {
+@media (min-width: 768px) {
+  /*
   .portal-header .portal-header-breadcrumb {
       display: flex !important;
       margin: 0 1rem;
   }
-  .portal-main-content .portal-header-breadcrumb {
-      display: none !important;
+  */
+  .portal-main-content .#{$namespace}siteHierarchy {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    color: var(--portal-main-content-header-breadcrumb-color);
+    background: var(--portal-main-content-header-breadcrumb-bg);
+    border-radius: 6px;
+    padding: 1rem;
+    margin: 0 -0.25rem 1rem 0;
+    .is-parent,
+    .is-parent + .#{$namespace}siteHierarchy--separator {
+      font-size: 0.875rem;
+    }
+    .#{$namespace}siteHierarchy--separator {
+      color: var(--link-color);
+      display: inline-block;
+    }
+    a {
+      color: var(--link-color);
+      white-space: nowrap;
+      &:hover {
+        color: var(--link-hover-color);
+      }
+    }
+    .header-tool-title {
+      display: none;
+    }
   }
 }
 
-@include media-breakpoint-down(md) {
+@media (max-width: 767px) {
   .portal-header .portal-header-breadcrumb {
       display: none !important;
   }
@@ -93,13 +123,19 @@
   gap: 0rem 0.5rem;
 }
 
-.portal-header-breadcrumb-separator, .portal-header-breadcrumb-item > a {
-  color: var(--sakai-text-color-2) !important;
+.portal-header-breadcrumb-separator,
+.portal-header-breadcrumb-item > a {
+  color: var(--top-header-text-color);
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 400;
   &:hover {
+    color: var(--top-header-text-color);
+    opacity: 0.9;
     text-decoration: underline;
   }
+}
+.portal-header-breadcrumb-item.header-tool-title > a {
+  font-weight: 600;
 }
 
 .portal-header-breadcrumb-separator {
@@ -117,11 +153,6 @@
 
 .portal-header-hamburger-button {
   color: var(--top-header-text-color) !important;
-  &:hover,
-  &:focus {
-    border: solid 1px transparent !important;
-    box-shadow: none !important;
-  }
 }
 /* 
  * WARNING: This CSS uses deprecated properties because there's currently no alternative way
@@ -134,7 +165,7 @@
  * These may break in future browser versions, so monitor this and update if a more standardized 
  * approach becomes available.
  */
-@include media-breakpoint-up(md) {
+ @media (min-width: 767px) {
   .sidebar-site-title {
     width: 128px;
     display: -webkit-box;  /* Deprecated, but necessary for multi-line text truncation */
@@ -147,6 +178,7 @@
     word-break: break-word;
     text-overflow: ellipsis;
     max-height: 47px; /* Fallback: Setting max-height as a fallback measure */
+    flex-grow: 5;
   }
 }
 
@@ -160,7 +192,7 @@
 }
 
 // Responsive header for mobile
-@include media-breakpoint-down(md) {
+@media (max-width: 767px) {
   .portal-header {
     justify-content: space-between !important;
     box-shadow: none !important;
@@ -189,6 +221,11 @@
 
   .sak-sysInd-account {
     border-radius: 30px;
+    border: 2px solid currentColor;
+    font-size: 0;
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
   }
 
   .sakai-accountProfileImage {
@@ -203,6 +240,7 @@
 }
 
 .portal-main-content {
+  grid-area: main;
   outline: none;
 }
 
@@ -213,11 +251,17 @@
   overflow-x: auto;
 }
 
+#footerAppPresence {
+  display: none;
+}
+
 #sakai-account-panel {
   #sakai-profile-image-block > button {
     border: 1px transparent;
     #sakai-profile-image-change {
         display: none;
+        position: absolute;
+        margin: -1.5rem 0 0 1.5rem;
     }
     &:hover, &:focus {
       #sakai-profile-image-change {
@@ -265,7 +309,7 @@
   bottom: 0;
   z-index: 1050;
   color: white;
-  button, a {
+  button, a, a.btn {
     color: white;
     span.bi {
       font-size: 24px;
@@ -278,27 +322,24 @@
 .portal-jump-links a {
   color: #fff;
 }
-#xlogin-logo {
-  height: calc(var(--portal-header-height) * 2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
+.xlogin-logo {
   .portal-header-logo {
     height: var(--portal-header-height);
   }
 }
-#sakai-login-dialog .alert {
-  margin-right: 1rem;
-  margin-left: 1rem;
-}
 @include media-breakpoint-up(md) {
   .portal-header {
     .portal-header-logo {
-      width: fit-content;
-      min-width: fit-content;
       background: var(--top-header-background-logo);
-      border-right: solid 1px var(--top-header-border-color);
+      margin: 0 0 0 1rem;
+      min-width: fit-content;
+      width: fit-content;
+    }
+  }
+  .xlogin-logo {
+    .portal-header-logo {
+      width: var(--portal-nav-sidebar-width);
+      min-width: var(--portal-nav-sidebar-width);
     }
   }
 }
@@ -310,10 +351,16 @@
   display: inline-block;
   max-height: var(--logo-height);
   min-height: var(--logo-height);
-  width: var(--logo-width);
+  width: var(--logo-width)
 }
 .portal-header-logo .btn:hover {
   border-color: transparent !important;
+}
+
+@media #{$phone} {
+  .portal-header-logo {
+    margin: 0 auto;
+  }
 }
 
 .portal-user-role {
@@ -384,30 +431,6 @@
   color: var(--sakai-modal-header-color) !important;
 }
 
-.portal-nav-sidebar-icon {
-  &::before {
-    content: "\f479";
-  }
-  &:hover::before {
-    content: "\f659";
-  }
-}
-
-.portal-nav-sidebar-icon-collapsed {
-  &::before {
-    content: "\f479";
-  }
-  &:hover::before {
-    content: "\f138";
-  }
-}
-
-.portal-nav-sidebar-icon-hover {
-  &::before {
-    content: "\f659";
-  }
-}
-
 #portal-nav-sidebar {
 
   grid-area: sidebar;
@@ -434,6 +457,20 @@
   li.site-list-item {
     border: solid 1px var(--sakai-border-color) !important;
     border-radius: 4px;
+
+    &[data-type="home"] .sidebar-site-title{
+      &::before {
+        content: "\f424";
+        display: inline-block;
+        font-family: "bootstrap-icons" !important;
+        font-size: 1.1rem;
+        font-weight: 400;
+        position: relative;
+        text-align: left;
+        top: 2px;
+        width: 1.2rem;
+      }
+    }
 
     .site-list-item-head {
       button {
@@ -537,34 +574,10 @@
     overflow-y: scroll;
     position: sticky;
     top: 0;
-    scrollbar-width: none;
-  }
-
-  @include media-breakpoint-up(md) {
-    .sakai-sitesAndToolsNav {
-      &:hover,
-      &:focus {
-        & .site-list-item {
-          margin-right: 0.14rem !important;
-        }
-      }
-    }
-  }
-
-  .sakai-sitesAndToolsNav:hover,
-  .sakai-sitesAndToolsNav:focus {
-    scrollbar-width: auto;
-
-    &::-webkit-scrollbar-track,
-    &::-webkit-scrollbar-corner {
-      background: var(--sakai-background-color-1);
-    }
-
-    &::-webkit-scrollbar-thumb {
-      border: solid 4px var(--sakai-background-color-1);
-    }
-    &::-webkit-scrollbar-thumb:hover {
-      border: solid 4px var(--sakai-background-color-1);
+    scrollbar-width: thin;
+    &:hover,
+    &:focus {
+      scrollbar-width: thin;
     }
   }
 
@@ -682,19 +695,18 @@
 @include media-breakpoint-up(md) {
 
   .offcanvas {
-    margin: 1.5rem 2.5rem 1rem 1rem;
-    border-radius: 6px 6px 4px 4px;
+    // margin: 1.5rem 2.5rem 1rem 1rem;
+    border-radius: 0;
   }
 
   .offcanvas-header {
-    border-radius: 4px 4px 0 0;
+    border-radius: 0;
   }
 
   .offcanvas-body {
-    border-bottom: solid 1px var(--sakai-border-color);
     border-left: solid 1px var(--sakai-border-color);
     border-right: solid 1px var(--sakai-border-color);
-    border-radius: 0 0 4px 4px;
+    border-radius: 0;
   }
 }
 
@@ -757,7 +769,7 @@
     color: var(--sticky-foooter-color-hover);
   }
 
-  @include media-breakpoint-down(md) {
+  @media (max-width: 767px) {
     background-color: var(--sakai-background-color-5);
     padding-left: var(--bs-offcanvas-padding-x) !important;
     padding-right: var(--bs-offcanvas-padding-x) !important;
@@ -785,4 +797,25 @@
 .toast-body {
   color: var(--sakai-text-color-1);
   background-color: var(--sakai-background-color-2);
+}
+
+table.table {
+  line-height: 1.3;
+	th, td {
+		font-size: 0.9rem !important;
+	}
+	th {
+		font-weight: 500;
+	}
+}
+
+a[name="asnActionLink"] {
+  font-weight: 500;
+}
+
+.itemAction {
+  line-height: 1;
+  margin: 0;
+  padding: 0.5rem 0;
+  white-space: nowrap;
 }

@@ -1,5 +1,39 @@
 .#{$namespace}sakai-lessonbuildertool {
 
+  #toolbar {
+    padding: 0 0.7rem;
+  }
+
+  .ui-controlgroup[role="toolbar"] {
+    display: flex;
+    gap: 0.25rem;
+    justify-content: flex-start;
+  }
+  
+  .modal-footer {
+    gap: 0.25rem;
+  }
+
+  label[for="force-button-color"] {
+    max-width: 90%;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    top: -3px;
+  }
+
+  .modal-content {
+    .radio, .form-group {
+      label {
+        max-width: 90%;
+        vertical-align: top;
+        position: relative;
+        top: -2px;
+      }
+    }
+  }
+  
+
 	.navIntraTool {
 		margin: 0 0 0 0;
 		padding: 0 0 0 0;
@@ -394,6 +428,58 @@
 				margin:0;
 				padding: calc(#{$standard-spacing} / 2) 0;
 			}
+			/* Comienzo de la adaptación a la importación de EDTECH */
+			div.textType .textbox {
+				--lessons-head-hx: var(--sakai-brand);
+				.panel .panel-heading h2,
+				.panel .panel-heading h3,
+				.panel .panel-heading h4 {
+					color: var(--sakai-background-color-1);
+				}
+				h1 {
+					color: var(--lessons-head-h1);
+				}
+				h2 {
+					color: var(--lessons-head-h2);
+				}
+				h3 {
+					color: var(--lessons-head-h2);
+				}
+				h4,
+				h5,
+				h6 {
+					color: var(--lessons-head-hy);
+				}
+				ul li {
+					padding-left: 5px;
+					&::marker {
+						font-family: "FontAwesome";
+						content: "\f058";
+						font-size: 15px;
+						color: var(--lessons-list-marker);
+					}
+					ul li {
+						padding-left: 0px;
+						&::marker {
+							font-family: "Inter", sans-serif;
+							content: normal;
+							font-size: 17px;
+							color: var(--lessons-list-marker-2);
+						}
+						ul li {
+							&::marker {
+								color: var(--lessons-list-marker-3);
+							}
+						}
+					}
+				}
+				.panel.panel-danger.panel-button-container {
+					border: 2px solid var(--errorBanner-bordercolor);
+					.panel-body {
+						margin: 15px;
+					}
+				}
+			}
 			div.item:hover,
 			div.item:focus,
 			div.item:active {
@@ -405,6 +491,41 @@
 				display: $lessons-item-edit-display;
 			}
 		}
+		div#import-template-panel.panel {
+			margin-top: 20px;
+			margin-bottom: -20px;
+			border-color: var(--sakai-modal-header-bg);
+			> div.panel-heading {
+				background-color: var(--sakai-modal-header-bg);
+				border-color: var(--sakai-modal-header-bg);
+				.panel-title {
+					color: var(--sakai-background-color-1)
+				}
+			}
+			#import-template-content-msg {
+				margin: 10px 10px auto 10px;
+			}
+			form#import-template-form {
+				padding: 15px;
+			}
+		}
+		.panel.panel-primary {
+			border: 2px solid var(--sakai-modal-header-bg);
+			.panel-heading {
+				background-color: var(--sakai-modal-header-bg);
+				padding: 2px 15px;
+				p {
+					color: var(--sakai-background-color-1);
+				}
+			}
+			.panel-insight-title {
+				color: var(--sakai-background-color-1);
+			}
+			.panel-body {
+				padding: 15px;
+			}
+		}
+		/* Fin de la adaptación a la importación de EDTECH */
 	}
 	button.section-merge-link, button.column-merge-link {
 		padding: 0;
@@ -828,7 +949,7 @@
 
   /* padding-top 35 for one col, 25 for multiple, 20 in narrow screen */
   .column {
-    margin: 8px 16px 0 0;
+    margin: 4px 8px 4px 8px;
     padding: 25px 7px 15px 7px;
     list-style:none;
     display:inline-block;
@@ -1478,7 +1599,7 @@
     width: 100%;
   }
   .forum-summary-div {
-    margin-top: 10px;
+    margin-top: 2rem;
   }
   .forumSummaryHeaderDiv {
     position: relative;
@@ -1626,15 +1747,7 @@
   }
 
   .deleteCandidate td:first-child {
-    position: relative;
-    padding-left: 25px;
-    &::before {
-      content: "\F5DE"; /* bi-trash */
-      font-family: bootstrap-icons;
-      position: absolute;
-      left: 2px;
-      top: 3px;
-    }
+    background: transparent url('/library/image/silk/delete.png') 2px 3px no-repeat;
   }
   .deleteCandidate td:first-child div {
     margin-left: 25px;
@@ -1737,24 +1850,10 @@
   }
   .portletTitle .action a.tool-directurl {
     padding:2px;
-    position: relative;
-    padding-right: 20px;
-    &::after {
-      content: "\F277"; /* bi-link-45deg */
-      font-family: bootstrap-icons;
-      position: absolute;
-      right: 0;
-    }
+    background: url(/library/image/silk/link.png) center right no-repeat;
   }
   .portletTitle .action a.tool-directurl:hover {
-    position: relative;
-    padding-right: 20px;
-    &::after {
-      content: "\F144"; /* bi-box-arrow-up-right */
-      font-family: bootstrap-icons;
-      position: absolute;
-      right: 0;
-    }
+    background: url(/library/image/silk/link_go.png) center right no-repeat;
   }
   .direct-url-wrap {
     font-size: 85%;
@@ -2886,4 +2985,8 @@ div#calendarEventDialog {
       padding-left: 10px;
     }
   }
+}
+
+iframe[src^="https://view.genially.com"] {
+    position: absolute;
 }

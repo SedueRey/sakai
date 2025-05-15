@@ -234,9 +234,6 @@
   text-align: left;
   color: var(--sakai-text-color-dimmed);
 }
-#gradeTableWrapper tbody td .gb-value {
-  line-height: 30px;
-}
 #gradeTableWrapper tbody td .gb-value.gb-overridden {
   font-weight: bold;
 }

@@ -772,7 +772,7 @@ body.is-logged-out #linkNav .#{$namespace}sitesNav__menuitem .#{$namespace}sites
 	@include display-flex;
 	@include align-items(center);
 	@include justify-content(center);
-	margin: $standard-spacing $standard-spacing 0 $standard-spacing;
+	margin: $standard-spacing 0 0 0;
 	padding: $standard-spacing;
 
 	&.is-softly-deleted{
@@ -907,13 +907,18 @@ body.is-logged-out #linkNav .#{$namespace}sitesNav__menuitem .#{$namespace}sites
 	@include sakai_secondary_button();
 	position: absolute;
 	right: $standard-spacing;
-	margin-top: -4px;
+	margin-top: -7px;
+	margin-left: 2rem;
+	right: 40px !important;
+	background: var(--tool-tab-background-color);
+	z-index: 99;
 	
 	> span {
 		margin-right: $standard-space;
 	}
 	
 	@media #{$phone} {
+		display: none;
 		visibility: hidden;
 	}
 }
@@ -921,7 +926,13 @@ body.is-logged-out #linkNav .#{$namespace}sitesNav__menuitem .#{$namespace}sites
 // styles for the role switcher
 .role-switcher {
 	margin-inline-start: auto;
+	position: relative;
+	margin-top: 0;
 }
+
+.current-role + .breadcrumb .role-switcher {
+	margin-top: -2.5rem;
+} 
 
 #roleSwitchSelect {
 	font-weight: bold;

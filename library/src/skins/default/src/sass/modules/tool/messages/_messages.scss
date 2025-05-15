@@ -230,4 +230,8 @@
 	.DisableTags {
 		pointer-events: none;
 	}
+	table#pvtMsgSettings\:email_sendout + .shorttext,
+	table#pvtMsgSettings\:email_sendout + .shorttext + .shorttext {
+		display: none;
+	}
 }

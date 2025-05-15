@@ -1,0 +1,710 @@
+@import "defaults";
+
+.ui-widget.ui-widget-content {
+  border: 1px solid var(--sakai-border-color) !important;
+}
+
+.umjsf2-tool {
+    font-size: 13px;
+    .navIntraTool.actionToolbar li{
+        margin-right: 1rem;
+        margin-bottom: 1rem;
+    }
+    .alert {
+        display: block;
+        opacity: 1;
+        .close {
+            display: none;
+        }
+    }
+    .ui-widget {
+        font-family: $font-family;
+    }
+    ul.alert {
+        list-style: none;
+    }
+    table {
+        line-height: 1;
+        .alert {
+            line-height: 1.55;
+        }
+    }
+    .ui-widget.ui-widget-content {
+        border-color: transparent;
+    }
+    .navIntraTool {
+        margin: 0 0 0 0;
+    }
+    
+    button {
+        span.ui-button-text.ui-c {
+            padding: 0 0 0 0;
+        }
+    }
+    
+    .ui-datatable tbody td {
+        padding: 4px 10px;
+    }
+    
+    .empiezaPor td {
+        border-color: transparent;
+    }
+    
+    .imgMatricula {
+        display: inline-block;
+    }
+    
+    td.filterLabel label {
+        padding: 5px 6px 0 0;
+        line-height: 1;
+    }
+    .ui-state-active,.ui-widget-content .ui-state-active,.ui-widget-header .ui-state-active,a.ui-button:active,.ui-button:active,.ui-button.ui-state-active:hover {
+        background-color: var(--sakai-color-blue--darker-3);
+        border: 1px solid var(--sakai-color-blue--darker-3);
+        color: var(--sakai-passive-color-1) !important;
+        font-weight: normal;
+    }
+
+    .ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight {
+        color: var(--sakai-text-color-1);
+    }
+
+    .columnAlumnadoPhoto {
+        width: 90px;
+        text-align: center;
+    }
+    
+    .columnAlumnadoNombre {
+        width: 300px;
+    }
+
+    .columnAlumnadoMail {
+        width: 200px;
+    }
+
+    .columnAlumnadoDNI {
+        width: 75px;
+        text-align: center;
+    }
+    
+    .columnMatricula {
+        width: 120px;
+        text-align: center;
+    }
+    
+    .columnConvPresentadas {
+        width: 120px;
+        text-align: center;
+    }
+
+    .columnEstadoPlusIncompatible {
+        width: 150px;
+        text-align: center;
+    }
+
+    .columnAlumnadoMatricula {
+        width: 120px;
+    }
+
+    .columnAlumnadoGroup {
+        width: 14ch;
+    }
+
+    .columnAlumnadoSubGroup {
+        width: 290px;
+    }
+
+    .ui-datatable.ui-widget .ui-datatable-tablewrapper {
+        border-right: 1px solid var(--tool-border-color); 
+        max-width: calc(100vw - #{$tool-menu-width} - 5em);
+        overflow-y: auto;
+        @media #{$tablet}{
+            border-right: 1px solid var(tool-border-color); 
+            max-width: calc(100vw - #{$tool-menu-width} - 6em);
+            overflow-y: auto;
+        }
+        @media #{$phone}{
+            max-width: calc(100vw - 2.8em);
+            border-right: 1px solid var(--tool-border-color);
+        }
+    }
+
+    .ui-panel .ui-panel-content {
+        padding: 0;
+    }
+    .ui-datatable-odd {
+        background-color: var(--portal-background-color);
+    }
+
+    #alumnadoForm {
+        table table td {
+            padding: 0.5rem;
+            input[type="radio"] {
+                margin-right: 0.5em;
+            }
+        }
+    }
+
+    #alumnadoForm\:panelListado {
+        margin: 1rem 0 0 0;
+        td button {
+            margin-right: 0.25rem;
+        }
+    }
+
+    div#modalLeyenda {
+        position: fixed;
+        .ui-dialog-content table td {
+            padding: 0.5rem 1rem 0.3rem 0;
+            vertical-align: top;
+        }
+    }
+
+    .ui-widget-header {
+        .ui-paginator-page,
+        .ui-paginator-next,
+        .ui-paginator-first,
+        .ui-paginator-prev,
+        .ui-paginator-last {
+            padding: 8px 8px;
+        }
+    }
+
+    .ui-treenode-icon.ui-icon {
+        display: none;
+    }
+
+    .ui-icon-check {
+        background-position: -66px -145px;
+    }
+
+    .ui-icon-minus {
+        background-position: -50px -129px;
+    }
+
+    .valigntop {
+        vertical-align: top;
+    }
+
+    .ui-datatable.noHeader table thead tr {
+        display: none;
+    }
+
+    input[role="textbox"].ui-inputfield.ui-state-default {
+        background-color: var(--portal-background-color);
+    }
+
+    .cargandoGruposFiltros {
+        margin: 1em 0 0 2em;
+        position: absolute;
+    }
+
+    .table-borderless {
+        th, td {
+            border-color: transparent;
+            &:empty {
+                display: none;
+            }
+        }
+    }
+    
+    table.nowrap {
+        th, td {
+            white-space: nowrap;
+        }
+        label {
+            margin-left: 0.8em;
+            vertical-align: middle;
+            white-space: normal;
+        }
+    }
+
+    .medioSeparado table {
+        margin-bottom: 1rem;
+        label {
+            margin: 0 1.5em 0 0.5em;
+            vertical-align: middle;
+        }
+    }
+
+    .listTipos {
+        margin-bottom: 1.5rem;
+    }
+
+    .h4 {
+        display: block;
+    }
+
+    input#makeCollabSites\:aceptoCondiciones {
+        margin-right: 0.5rem;
+    }
+
+    .detached.ui-droppable {
+        .ui-datatable-tablewrapper {
+            overflow-x: visible;
+            overflow-y: visible;
+        }
+        .ui-datatable tbody td[role="gridcell"] {
+            overflow-x: visible;
+            overflow-y: visible;
+        }
+    }
+     
+    .alert-dismissible .close {
+    	top: -15px;
+    	right: -30px;
+    }
+
+}
+
+.#{$namespace}toolMenu-collapsed .umjsf2-tool {
+    .ui-datatable.ui-widget .ui-datatable-tablewrapper {
+        max-width: calc(100vw - #{$tool-menu-width-collapsed} - 5em);
+        @media #{$tablet}{
+            max-width: calc(100vw - #{$tool-menu-width-collapsed} - 6em);
+        }
+    }
+}
+
+.ui-widget-overlay {
+    background: rgba(0,0,0,0.5) !important;
+    opacity: 1 !important;
+}
+
+.#{$namespace}sakai-umucorrige {
+
+    .ui-widget.ui-widget-content {
+        margin: 0 0 0.5rem 0;
+    }
+    
+    #pruebaForm {
+        tr td {
+            padding: 0 0 8px 0;
+            vertical-align: top;
+        }
+        img {
+            vertical-align: baseline;
+        }
+        input[type='radio'] {
+            margin-right: 5px
+        }
+        .ui-widget.ui-widget.resultadosExamen {
+            font-size: 0.9em;
+            td {
+                padding: 4px;
+                text-align: center;
+            }
+            .alignleft {
+                text-align: left;
+            }
+        }
+        .plantillaExamen {
+            width: 250px;
+            margin: 3rem auto 0 auto;
+            table {
+                border-color: transparent;
+            }
+            input[type='checkbox'] {
+                margin-left: 0.5em;
+            }
+        }
+        .plantillaExamen__preguntas {
+            text-align: center;
+            tr td {
+                padding: 0 0 0 0;
+            }
+        }
+    }
+    #pruebaForm\:btnsTop tr td{
+        padding: 0 0.5rem 0 0;
+    }
+    div[role="dialog"].ui-dialog {
+        position: absolute;
+    }
+    table.aligncenter {
+        margin: 0 auto;
+        td {
+            text-align: center;
+        }
+    }
+    td.aligncenter {
+        text-align: center;
+    }
+    .tipoLabel {
+        font-weight: bold;
+        padding: 4px 0 0 0;
+    }
+    .centered_stats,
+    .centered_stats * {
+        text-align: center;
+        margin: 0 auto;
+    }
+}
+.#{$namespace}sakai-umualumnado {
+    tr[role="row"] {   
+	    th {
+	        height: 65px;
+	        vertical-align: top;
+	        }
+	    th.cabeceraSinFiltro {
+		        height: 35px;
+		        vertical-align: middle;
+		    }
+    }
+    table .celdaEspaciada {
+    	td {
+			padding: 1rem;
+			input {
+				margin-right: .5rem;
+				}
+			}
+	}
+    table .celdaEspaciadaH {
+    	td {
+			padding-right: .5rem;
+			}
+	}
+    .margenSuperior {
+    	margin-top: 1rem;
+    }
+    .margenInferior {
+    	margin-bottom: 1rem;
+    }
+}
+
+.#{$namespace}sakai-umumakesites {
+    h1.toolTitle {
+        margin: 0 0 0.5rem 0;
+    }
+    .navIntraTool.actionToolbar {
+        margin-bottom: 1.5rem;
+    }
+}
+
+.#{$namespace}sakai-umusolicitudes {
+    #solicitudesForm\:tblSolis.ui-datatable table{
+        table-layout: initial;
+        tbody tr td {
+            padding: 4px 8px;
+            img {
+                width: 24px;
+                height: 24px;
+            }
+        }
+    }
+    div[role="dialog"].ui-dialog {
+        position: absolute;
+    }
+    .solicitudes__dni,
+    .solicitudes__estado {
+        text-align: center;
+    }
+    .info_img {
+        height: 16px;
+        margin: 0.4em 0.4em 0.4em 0;
+        width: 16px;
+    }
+}
+
+.#{$namespace}sakai-umuadduser{
+    input[type="submit"], input[type="cancel"] {
+        margin: 0.5rem 0.5rem 0 0;
+    }
+    #newExternalsForm {
+        table#newExternalsForm\:tblUnknowns {
+            line-height: 2;
+            thead th ,
+            tbody td {
+                padding: 0.5rem 1rem;
+            }
+        }
+    } 
+    #newRolesForm {
+        table {
+            line-height: 2;
+            thead th ,
+            tbody td {
+                padding: 0.5rem 1rem;
+            }
+        } 
+    }
+
+    .#{$namespace}sakai-umuactas {
+        #menusakai\:barra\:printBorrador {
+            .ui-button-text {
+                margin-left: 16px;
+            }
+            .ui-button.ui-icon {
+                background-position: -64px -48px;
+            }
+        }
+    }
+}
+
+.#{$namespace}sakai-umuinnova{
+    td.valigntopcenter {
+        text-align: center;
+    }
+    form#innovaForm {
+        table[role="grid"] {
+            table-layout: initial;
+            font-size: 0.9em;
+        }
+        div[role="dialog"].ui-dialog {
+            position: absolute;
+        }
+    }
+}
+
+.#{$namespace}sakai-umullamamientos{
+    button#llamamientoForm\:cmdAnula {
+        padding: 0.25rem 0;
+    }
+    .portletBody {
+        max-width: 1440px;
+    }
+    div[role="dialog"].ui-dialog {
+            position: absolute;
+    }
+    .listadoLlamamientos {
+        @media only screen and (min-width : 1249px){
+            position: absolute;
+            left: -356px;
+            width: 350px;
+            top: 0;
+            font-size: 1.1rem;
+            td {
+                vertical-align: top;
+            }
+        }
+    }
+    .ui-datatable .ui-datatable-header {
+        text-align: left;
+        padding: 1rem;
+    }
+    .ui-state-default:not(button) {
+        border: unset;
+        &:has(.ui-column-title:empty) {
+            display: none;
+        }
+    }
+    table.tablaLlamamientos {
+        @media only screen and (min-width : 1249px){
+            width: calc(100% - 550px);
+            min-height: 100vh;
+            left: 356px;
+            position: relative;
+            top: 0;
+            .valigntop  {
+                vertical-align: top;
+            }
+        }
+        button.ui-button {
+            padding: 0.46rem 0;
+        }
+    }
+    .ui-datatable.sinBordesBlanco {
+        a {
+            text-decoration: underline;
+        }
+        td, th, div, p, span {
+            :empty {
+                display: none;
+                border-color: transparent;
+            }
+        }
+        img:empty {
+            display: block;
+        }
+        > .ui-datatable-tablewrapper > table {
+            border-color: transparent;
+            > thead,
+            > tbody {
+                border-color: transparent;
+                > tr {
+                    border-color: transparent;
+                    > th {
+                        background-color: transparent;
+                        padding: 0 4px;
+                        border-color: transparent;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.#{$namespace}sakai-umuactas{ 
+    #actaForm\:tagsfirma,
+    #menusakai\:barra,
+    .navIntraTool {
+        a {
+            margin-right: 16px;
+            img {
+                height: auto;
+                width: 24px;
+            }
+        }
+        img.escudo {
+            margin-top: -18px;
+        }
+        .ui-button-text-icon-left {
+            .ui-button-icon-left.ui-icon {
+                background-position: -64px -48px;
+            }
+            .ui-button-text.ui-c {
+                margin-left: 18px;
+            }
+        }
+    }
+    #spamfirma {
+        background: var(--errorBanner-bgcolor);
+        border: 1px solid var(--errorBanner-bordercolor);
+        color: 1px solid var(--errorBanner-color);
+    }
+    tr.ui-widget-content td.centro img {
+        height: 16px;
+        width: auto; 
+    }
+    fieldset.ui-widget.ui-widget-content {
+        border: 1px solid var(--tool-border-color);
+        margin: 1.5rem 0;
+        padding-bottom: 2rem;
+        legend {
+            font-size: 1.1rem;
+            font-weight: 600;
+            line-height: 1.05;
+            letter-spacing: -0.03rem;
+            background-color: var(--sakai-background-color-1);
+            .ui-icon {
+                margin-right: 0.5rem;
+                margin-top: 0.1rem;
+            }
+        }
+    }
+    table.imgCentrada {
+        margin: 2rem 0 0 0;
+        text-align: center;
+        width: 100%;
+        border: 1px solid var(--tool-border-color);
+        border-collapse: collapse;
+        tr:first-child td {
+            padding-top: 2rem;
+        }
+        tr:last-child td {
+            padding-bottom: 1rem;
+        }
+    }
+    .table-layout-initial table {
+	    table-layout: initial;
+	}
+    #busquedaForm {
+        .ui-radiobutton-box.ui-widget.ui-corner-all.ui-state-default {
+            height: 19px;
+            width: 19px;
+        }
+    }
+
+    .normal img + span {
+        display: inline-block;
+    }
+    
+    .normal.alert-danger {
+        background-color: var(--warnBanner-bgcolor);
+    }
+    
+    .condicionada {
+        background-color: var(--successBanner-bgcolor);
+    }
+    
+    .diligenciando {
+        background-color: var(--infoBanner-bgcolor);
+    }
+    
+    .diligenciandoCC {
+        background-color: #F1E6FF;
+    }
+    
+    .linkPortafirmas {
+        border-color: darkRed !important;
+        background-color: var(--warnBanner-bgcolor);
+    }
+
+    .linkPortafirmas a {
+        text-decoration: none !important;
+    }
+
+    .tablaSinAsignar {
+        background-color: var(var(--warnBanner-bgcolor));
+        border-color: var(--warnBanner-bordercolor) !important;
+        margin-top: 10px !important;
+        margin-bottom: 10px !important;
+    }
+
+    .tablaAsignadas {
+        background-color: var(--successBanner-bgcolor);
+        border-color: var(--successBanner-bordercolor) !important;
+        margin-top: 20px !important;
+        margin-bottom: 10px !important;
+    }
+
+    .recientes {
+        margin-top: 50px;
+    }
+
+    .recientes th {
+        background-color: var(--tool-border-color);
+        background-image: url("../images/grading-grey.png");
+        background-position: top left;
+        background-repeat: repeat-x;
+    }
+    .centro.botonContainer table {
+	    width: auto;
+	    border-collapse: separate;
+	    border-radius: 1em;
+	    background: #f8f6f6;
+	}
+	
+	.centro.botonContainer table td:first-child {
+		border-top: 1px solid var(--tool-border-color);
+	    border-top-left-radius: 5px;
+	    border-bottom-left-radius: 5px;
+	    border-left: 1px solid var(--tool-border-color);
+	    border-bottom: 1px solid var(--tool-border-color);
+	    background: #f8f6f6;
+	}
+	
+	.centro.botonContainer table td:last-child {
+	    border-top: 1px solid var(--tool-border-color);
+	    border-top-right-radius: 5px;
+	    border-bottom-right-radius: 5px;
+	    border-right: 1px solid var(--tool-border-color);
+	    border-bottom: 1px solid var(--tool-border-color);
+	    position: relative;
+	    left: -2px;
+	    background: var(--infoBanner-bgcolor);
+	    border-left-color: var(--infoBanner-bgcolor);
+	}
+	
+	div[role="combobox"].ui-selectonemenu.ui-widget.ui-state-default.ui-corner-all {
+		width: 100%;
+	}
+	.ui-icon-triangle-1-s {
+		background-position: -65px -13px;
+	}
+	.ui-tree .ui-treenode-icon {
+		display: inline-block;
+	}
+
+	.colHeaderLineas {
+		padding-right: 10px;
+	}
+
+	.separada {
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+	.dr-table td a img {
+		min-width: 16px;
+	}
+}

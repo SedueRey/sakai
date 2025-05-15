@@ -163,6 +163,16 @@ ul.favorite-site-list {
       border-color: var(--all-sites-button-selected-border-color);
       border-radius: $all-sites-button-selected-border-radius;
 
+      a {
+        color: var(--sakai-text-color-inverse);
+        font-weight: $all-sites-button-text-weight;
+  
+        &:hover {
+          color: var(--sakai-text-color-inverse);
+          opacity: 0.9;
+        }
+      }
+
       .site-favorite-btn {
         .site-nonfavorite {
           color: var(--all-sites-button-selected-star-empty-color);
@@ -265,18 +275,22 @@ div.fav-title-myworkspace {
 }
 
 .fav-title {
-  width: 240px;
+  width: calc(100% - 1.5rem);
   overflow: hidden;
   display: inline-block;
   vertical-align: middle;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   a {
     width: 100%;
+    max-width: 100%;
     display: inline-block;
     height: $all-sites-button-height;
-    line-height: 29px;
+    line-height: 30px;
     text-decoration: none !important;
     vertical-align: middle;
-
+    text-overflow: ellipsis;
+    white-space: nowrap;
     .fullTitle {
       padding-left: 2px;
     }
@@ -411,4 +425,14 @@ div.fav-title-myworkspace {
       padding: 1em 0 0 0;
     }
   }
+}
+
+.fav-sites-card .card-title {
+  align-items: center;
+  display: flex;
+  font-size: 1.15rem;
+  height: 2rem;
+  line-height: 1;
+  margin: 0;
+  padding: 0;
 }

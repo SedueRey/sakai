@@ -141,12 +141,6 @@ sakai-grader {
 
     background-color: var(--sakai-title-bar-bg-color);
 
-    .offcanvas-title {
-      font-size: 14px;
-      margin-right: auto;
-      margin-left: 1rem;
-    }
-
     .grader-photo {
       min-width: 48px;
       width: 48px;
@@ -545,7 +539,7 @@ sakai-grader {
     }
   } //media tablet
 
-  @include media-breakpoint-up(xl) {
+  @media (min-width: 992px) {
     /* Desktop layout */
     #grader {
       position: sticky;
@@ -557,12 +551,12 @@ sakai-grader {
       right: auto;
       float: none;
       flex: 0 0 400px;
-      margin: $standard-spacing 0 0 $standard-spacing;
+      margin: 0;
     }
 
     /* Ensure the offcanvas body scrolls properly */
     #grader .offcanvas-body {
-      height: calc(100vh - 160px); /* Subtract header height */
+      height: calc(100vh - 90px); /* Subtract header height */
       overflow-y: auto;
       padding-bottom: 20px;
     }
@@ -589,7 +583,8 @@ sakai-grader {
     #grader-gradable-container {
       flex: 1;
       height: 100%;
-      max-width: calc(100% - 400px - $standard-spacing);
+      max-width: calc(100% - 420px);
+      margin-right: $standard-spacing;
       overflow-y: scroll;
     }
     
@@ -597,6 +592,20 @@ sakai-grader {
     #grader-gradable-content {
       height: auto;
       min-height: 100%;
+    }
+  }
+
+  /* For mobile, keep the original offcanvas behavior */
+  @media (max-width: 991.98px) {
+    #grader {
+      width: 100%;
+      max-width: 100%;
+      position: fixed;
+    }
+    
+    /* Show the "Grade Submission" button on mobile */
+    #grader-link-block {
+      display: block;
     }
   }
 }

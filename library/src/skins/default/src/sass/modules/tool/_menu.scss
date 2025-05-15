@@ -82,6 +82,9 @@
 				-webkit-appearance: none;
 				box-shadow: var(--button-shadow);
 			}
+			a {
+				color: currentColor;
+			}
 		}
 		
 		// Specific styling for span.current > a
