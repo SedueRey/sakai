@@ -1,0 +1,53 @@
+## Sustituyo las migas de pan por las de 22, que funcionan
+<nav class="Mrphs-siteHierarchy">
+    #if ($!siteParents)
+        #foreach ($parent in $siteParents)
+        <div class="Mrphs-hierarchy--siteName is-parent">
+            <a href="$!{parent.siteUrl}" title="$!{parent.siteTitle}">
+                $parent.siteTitle
+            </a>
+            <div class="bi bi-chevron-right Mrphs-siteHierarchy--separator"></div>
+        </div>
+        #end
+    #end
+    
+    #set($index = 0)
+    #foreach( $page in $sitePages.pageNavTools )
+        #if ( $index == 0 )
+        <div class="Mrphs-hierarchy--siteName" title="${siteTitleTruncated}">
+            <a href="${page.pageResetUrl}">
+                #if (${isUserSite})
+                    <i class='fa fa-home' aria-hidden="true"></i>
+                #end
+                <span class="Mrphs-hierarchy--siteName-label">
+                    ${siteTitleTruncated}
+                </span>
+            </a>
+        </div>
+        #end
+        #set($index = $index + 1 )
+    #end
+    #foreach( $page in $sitePages.pageNavTools )
+        #if ($page.current)
+        <div class="bi bi-chevron-right portal-header-breadcrumb-separator d-none"></div>
+        <div class="portal-header-breadcrumb-item header-tool-title">
+            <a href="${page.pageResetUrl}" class="Mrphs-hierarchy--toolName" title="${page.pageTitle}">
+                ${page.pageTitle}
+            </a>
+        </div>
+
+        #if(${sitePages.canManageOverview} && ${page.pageProps.is_home_page})
+            <a href="${sitePages.manageOverviewUrl}" title="$rloader.sit_manover" class="Mrphs-hierarchy-item manage-overview-link d-none d-lg-block">
+                <span class="fa fa-pencil"></span>$rloader.sit_manover
+            </a>
+        #end
+        #if(${sitePages.canManageOverviewHome} && ${page.pageProps.is_home_page})
+            <a href="${sitePages.manageOverviewUrlInHome}" title="$rloader.sit_manover" class="Mrphs-hierarchy-item manage-overview-link d-none d-lg-block">
+                <span class="fa fa-pencil"></span>$rloader.sit_manover
+            </a>
+        #end
+
+        #end
+    #end
+</nav>
+
