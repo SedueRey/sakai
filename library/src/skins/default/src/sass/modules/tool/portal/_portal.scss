@@ -8,7 +8,7 @@
 .portal-container {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: auto auto var(--portal-header-height) 1fr var(--portal-header-height);
+  grid-template-rows: auto auto var(--portal-header-height) 1fr calc(var(--portal-header-height) / 2 + 1);
   grid-template-areas:
       "paBanner"
       "jumpLinks"
@@ -28,11 +28,7 @@
         "header header"
         "sidebar mainContainer";
     &.sidebar-collapsed {
-      grid-template-areas:
-          "paBanner paBanner"
-          "jumpLinks jumpLinks"
-          "header header"
-          "mainContainer mainContainer";
+      grid-template-columns: 3rem 1fr;
     }
   }
   #portal-nav-sidebar {
@@ -71,7 +67,7 @@
   color: var(--top-header-text-color);
 }
 
-@media (min-width: 768px) {
+@include media-breakpoint-up(md) {
   /*
   .portal-header .portal-header-breadcrumb {
       display: flex !important;
@@ -108,7 +104,7 @@
   }
 }
 
-@media (max-width: 767px) {
+@include media-breakpoint-down(md) {
   .portal-header .portal-header-breadcrumb {
       display: none !important;
   }
@@ -153,6 +149,11 @@
 
 .portal-header-hamburger-button {
   color: var(--top-header-text-color) !important;
+  &:hover,
+  &:focus {
+    border: solid 1px transparent !important;
+    box-shadow: none !important;
+  }
 }
 /* 
  * WARNING: This CSS uses deprecated properties because there's currently no alternative way
@@ -165,7 +166,7 @@
  * These may break in future browser versions, so monitor this and update if a more standardized 
  * approach becomes available.
  */
- @media (min-width: 767px) {
+ @include media-breakpoint-up(md) {
   .sidebar-site-title {
     width: 128px;
     display: -webkit-box;  /* Deprecated, but necessary for multi-line text truncation */
@@ -192,7 +193,7 @@
 }
 
 // Responsive header for mobile
-@media (max-width: 767px) {
+@include media-breakpoint-down(md) {
   .portal-header {
     justify-content: space-between !important;
     box-shadow: none !important;
@@ -229,8 +230,8 @@
   }
 
   .sakai-accountProfileImage {
-    width: 30px;
-    min-width: 30px;
+    width: 26px;
+    min-width: 26px;
   }
 }
 
@@ -242,6 +243,11 @@
 .portal-main-content {
   grid-area: main;
   outline: none;
+  @media #{$phone}{
+    padding-bottom: $standard-spacing;
+    padding-top: $standard-spacing;
+    min-height: calc(100vh - 2 * var(--portal-header-height));
+  }
 }
 
 .portal-main-container {
@@ -331,7 +337,7 @@
   .portal-header {
     .portal-header-logo {
       background: var(--top-header-background-logo);
-      margin: 0 0 0 1rem;
+      margin: 0 0 0 -1rem;
       min-width: fit-content;
       width: fit-content;
     }
@@ -351,7 +357,7 @@
   display: inline-block;
   max-height: var(--logo-height);
   min-height: var(--logo-height);
-  width: var(--logo-width)
+  width: var(--logo-width);
 }
 .portal-header-logo .btn:hover {
   border-color: transparent !important;
@@ -429,6 +435,62 @@
   cursor: move;
   background: var(--sakai-modal-header-bg) !important;
   color: var(--sakai-modal-header-color) !important;
+}
+
+// SAK-51490
+.portal-nav-sidebar-icon {
+  &::before {
+    content: "\f479";
+  }
+  &:hover::before {
+    content: "\f659";
+  }
+}
+
+.portal-nav-sidebar-icon-collapsed {
+  &::before {
+    content: "\f479";
+  }
+  &:hover::before {
+    content: "\f138";
+  }
+}
+
+.portal-nav-sidebar-icon-hover {
+  &::before {
+    content: "\f659";
+  }
+}
+
+// End SAK-51490
+
+#portal-nav-sidebar-alternate {
+  background: var(--portal-main-content-header-breadcrumb-bg);
+  cursor: pointer;
+  display: none;
+  flex-direction: row-reverse;
+  grid-area: sidebar;
+  justify-content: flex-start;
+  overflow: hidden !important;
+  transform: rotate(-180deg);
+  user-select: none;
+  writing-mode: vertical-rl;
+  @include media-breakpoint-up(md) {
+    display: none;
+    &.sidebar-collapsed {
+      display: flex !important;
+      h3 {
+        padding: 0.5rem 0.75rem;
+        font-size: 1.2rem;
+      }
+      .huge {
+        cursor: pointer;
+        font-size: 2rem;
+        left: 15px;
+        position: relative;
+      }
+    }
+  }
 }
 
 #portal-nav-sidebar {
@@ -769,7 +831,7 @@
     color: var(--sticky-foooter-color-hover);
   }
 
-  @media (max-width: 767px) {
+  @include media-breakpoint-down(md) {
     background-color: var(--sakai-background-color-5);
     padding-left: var(--bs-offcanvas-padding-x) !important;
     padding-right: var(--bs-offcanvas-padding-x) !important;
@@ -818,4 +880,24 @@ a[name="asnActionLink"] {
   margin: 0;
   padding: 0.5rem 0;
   white-space: nowrap;
+}
+
+div#otherSiteSearchHead {
+  position: relative;
+  &::after {
+    content : "";
+    display: block;
+    position: absolute;
+    z-index: 2;
+    width: 16px;
+    background: url("./images/lupa_icon.svg") no-repeat center;
+    background-size: contain;
+    top: 8px;
+    right: 5px;
+    aspect-ratio: 1 / 1;
+  }
+}
+
+input#search-all-sites-head {
+  padding: 0.35rem;
 }

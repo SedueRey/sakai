@@ -18,7 +18,7 @@ For opening help sidebar
       #set ($helpLink = $pageColumn1Tools.get(0).toolHelpActionUrl)
   #end
   #if ($helpLink)
-    <li class="d-none d-md-inline">
+    <li class="d-none">
       <a class="sak-sysInd-help desktop-help-icon"
           title="${rloader.mainnav_help_tooltip}"
           href="${helpLink}"
@@ -30,8 +30,14 @@ For opening help sidebar
       </a>
     </li>
   #end
-  <li class="d-none d-md-inline">
+  <li class="d-none d-md-flex align-items-center">
+    <!-- Cambiamos el icono por un inputText -->
+    <div id="otherSiteSearchHead" class="d-inline">
+      <span id="otherSiteSearchHeadLabel" style="position:absolute;top:-30rem" for="search-all-sites">Filtro de sitios</span>
+      <input type="search" id="search-all-sites-head" maxlength="50" aria-labelledby="otherSiteSearchHeadLabel" placeholder="Mis asignaturas" />
+    </div>
     <button class="btn icon-button"
+        id="otherSiteSearchHeadButton"
         data-bs-toggle="offcanvas"
         data-bs-target="#select-site-sidebar"
         aria-label="$rloader.sit_allsites"
@@ -67,8 +73,8 @@ For opening help sidebar
       </button>
     </li>
   #end
-
-  <li class="d-none d-md-inline">
+  <!-- No usaremos el icono de calendario por ahora -->
+  <li class="d-none">
     <button class="btn icon-button"
         data-bs-toggle="offcanvas"
         data-bs-target="#sakai-calendar-panel"

@@ -121,6 +121,15 @@
 #end
 
 <!-- START VM includeSiteNav.vm -->
+<aside id="portal-nav-sidebar-alternate" class="d-none portal-nav-sidebar-alternate overflow-auto #if (${sidebarCollapsed})sidebar-collapsed#end" tabindex="-1" data-bs-backdrop="true" aria-labelledby="">
+    <i class="bi bi-arrow-bar-left huge"></i>
+    <h3>Mi Sitio</h3>
+    <h3 class="sites-section-heading #if (! $showSiteLabels) d-none #end">${rloader.sitenav_title_pinned}</h3>
+    <h3 class="sites-section-heading #if (! $showSiteLabels) d-none #end">${rloader.sitenav_title_recent}</h3>
+    <button class="btn icon-button" id="sidebarCollapsedButton" aria-label="Ver todos los sitios" title="Ver todos los sitios">
+      <span class="bi bi-grid-3x3-gap-fill" aria-hidden="true"></span>
+    </button>
+</aside>
 <aside id="portal-nav-sidebar" class="d-none portal-nav-sidebar overflow-auto #if (${sidebarCollapsed})sidebar-collapsed#end" tabindex="-1" data-bs-backdrop="true" aria-labelledby="">
     <div class="offcanvas-header d-md-none">
         <h2 class="offcanvas-title">${rloader.sitenav_title}</h2>

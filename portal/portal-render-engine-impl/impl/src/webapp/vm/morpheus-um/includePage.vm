@@ -28,8 +28,8 @@
 #else
     #set( $numberTools = $pageColumn0Tools.size() )
 #end
-<div class="portal-main-container container-fluid pt-4">
-    <main id="$pageWrapperClass" class="portal-main-content #if( $numberTools > 1 || $homePage)Mrphs-multipleTools #end px-3" role="main" tabindex="-1">
+<div class="portal-main-container container-fluid pt-0 pt-md-4">
+    <main id="$pageWrapperClass" class="portal-main-content #if( $numberTools > 1 || $homePage)Mrphs-multipleTools #end px-0 px-md-3" role="main" tabindex="-1">
         <h1 class="skip visually-hidden" tabindex="-1" id="tocontent">${rloader.sit_contentshead}</h1>
 
         #if (${currentRole} && $roleSwitchState == false)
